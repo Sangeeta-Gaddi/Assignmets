@@ -1,0 +1,29 @@
+//Time complexity of the code/
+
+function solve(int n){
+for(let i = 0; i < n; i++){
+     for(int j=0; j < i / 2; j++){
+// 0(1) operation
+}
+}
+}
+
+* Here the outer loop runs "n" times.
+* The inner loop runs "i/2" times for each iteration of outer loop.
+
+i.e, i(outerloop)  j(innerloop)  
+      0            [0,0]           
+      1            [1,1/2]         
+      2            [2,2/2]         
+      .               .            
+      .               .            
+      .               .            
+      .               .            
+      n              n/2           
+
+      Therefore time complexity of the code is product of operations of both loops=n*n/2
+       Time complexity                                    =n^2/2
+     Now applying Big O                                   =O(n^2)/2
+     *neglecting the lower order terms and constants.
+     *nelecting the coefficients.
+     We get, Time complexity of the code = O(n^2).
