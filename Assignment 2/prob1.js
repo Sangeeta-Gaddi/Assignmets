@@ -8,6 +8,9 @@ console.log(typeof(num));
 let str="Nishita";
 console.log(typeof(str));
 
+let person="Advik";
+console.log(typeof(person));
+
 const bool=false;
 console.log(typeof(bool));
 
@@ -23,6 +26,7 @@ console.log(typeof(bool));
  //output//
 //  number
 // string
+//string
 // boolean
 // object
 // object
