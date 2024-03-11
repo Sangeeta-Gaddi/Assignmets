@@ -1,0 +1,55 @@
+* Time Complexity:
+  Is a metric to evaluate the logic in terms of time consumed by logic, independent underlying platform.
+  Time complexity is calculated based on number of loops and iterations.
+
+* We will get the time complexity by observing the number of iterations and applying the Big O on it.
+  Big O notation says:
+  1) Neglect the lower order terms and constants.
+  2) Neglect the co-efficients.
+
+* If no for loop in logic/code then the value is 1, i.e, Big O(1).
+
+Consider the example:
+1) for(let i=1;i<=N;i++){
+    statements
+    {
+        for(let j=1;j<=N;j++)
+        {
+            statements
+        }
+    }
+}
+ Here, outer loop(i)  inner loop(j)
+         1               N
+         2               N
+         3               N
+         .               .
+         .               .
+         .               .
+         N               N
+-> for every outer loop iteration, inner loop will run N times.
+   Therfore,total number of iteration sum of iteration of both loops=N*N
+                                                                   =N^2
+    To get time complexity we apply big O=O(N^2).
+
+2)for(let i=1;i<M;i++){
+    statements
+}   
+for(j=1;j<N;j++)
+{
+    statements
+} 
+
+Here, No of iterations=M+N
+Time complexity=O(M+N).
+
+3)for(let i=1;i<M;i++){
+    statements   
+for(j=1;j<N;j++)
+{
+    statements
+} 
+}
+
+Here, No of iterations=M*N
+Time complexity=O(M*N).

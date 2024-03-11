@@ -1,0 +1,91 @@
+In first class some basic topics are discussed:
+
+* Understanding the definition of following terms.
+1)Programming: Programming can be defind as the getting work done from computer.
+2)Language: It is a set of rules to communicate with the computer.
+3)Program: Set of instructions written using a programming language to perform specific task.
+
+* Programming language should facilitates:
+1)Data storage.
+2)Action on data.
+3)Emitting actions(Display output).
+
+* Introduction to Javascript language.
+1)Javascript: Javascriptis scripting language for web,it is used to create and control website dynamically.
+
+2)Data Storage:It is defined as the methods and structures used to store and manage information(data) within the program.
+  This includes variables,arrays,objects.
+
+3)Variables:Refers to data storage, will helps to store the data.
+Syntax: keyword variable (assignment operator) storing value
+Example: let num=6;
+
+There are diffrent types of variables in Javascript:
+1.Numbers
+2.String
+3.Boolean
+4.Array
+5.Object
+
+Ex: 1) var num=5;
+       console.log(num); //output:5
+       console.log(typeof(num));//output:number
+
+    2)let str="Nishita";
+      console.log(str); //output:Nishita
+      console.log(typeof(str));//output:string
+
+    3)const bool=false;
+      console.log(bool);//output:false
+      console.log(typeof(bool));//output:boolean
+
+    4)var array=[1,2,3,4];
+      console.log(array);//output:[1,2,3,4]
+      console.log(typeof (array));//output:object
+
+    5) let obj={name:"Nishita", age:21};
+       console.log(obj);//output:{name:"Nishita", age:21}
+       console.log(typeof(obj));//output:object  
+
+Note: Once variable is created,if we want to reuse it then there is no need to use the keyword again before the variable.
+      Ex: let num1=6;
+          output=num1*num1;
+          console.log(output);//output:36
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

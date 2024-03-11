@@ -1,0 +1,46 @@
+* Formula's:
+
+1) Sum of N natural numbers:
+  1+2+3+4+......+N=N*(N+1)/2
+
+2)Sum of whole numbers:
+  0+1+2+3+......+N=N*(N-1)/2
+
+3)Range of numbers in array:
+* [a,b]=>(b-a+1),{first and last element included}.
+* [a,b)=>(b-a),{last element not included}.
+* (a,b]=>(b-a),{first element not included}.
+* (a,b)=>(b-a-1)-1,{first and last elementnot included}.
+
+* To know number of divisions required to reach 1 by consecutively dividing a number 'N' by 'a' is given by loga(N).
+  Ex: N=5
+      Number of ivisions=log2(5)=2
+
+Examples:
+1) let sum=0
+   for(let i=1;i<=N;i++)
+   {
+    sum=sum+i
+   }
+Here, i belongs[1,N]=(N-1+1)=N
+      Time complexity=O(N).
+
+2)let i=N
+  while(i>1){
+    i=i/2
+  }
+Time complexity=O(log2(N)).
+
+3)for(let i=1;i<=N;i++){
+    {
+        for(let j=1;j<=i;j++)
+        {
+    
+        }
+    }
+}
+      N               N
+-> for every outer loop iteration, inner loop will run N times.
+   Therfore,total number of iteration sum of iteration of both loops=N*N
+                                                                   =N^2
+   Time complexity=O(N^2).

@@ -1,0 +1,44 @@
+* Built-in Functions:
+1)charAt:
+Ex: let text="HelloWorld"
+    {
+   console.log(text.charAt(5))
+    }//output:W
+ 
+2)toUppercase:
+Ex:let tex="Hello World"
+   console.log(tex.toUpperCase());//output:HELLO WORLD
+
+3)toLowercase:
+Ex:let txt="Hello World"
+   console.log(txt.toLowerCase());//output:hello world
+
+4)indexOf:
+Ex:let text= "Opq Tech"
+   console.log(text.indexOf("Opq"));//output:0
+
+5)includes:
+Ex:let text="Good morning"
+   console.log(text.includes("Good"));//output:True
+
+6)typeof:
+Ex:let num=10;
+   console.log(typeof(num));//output:number
+
+7)push():
+Ex:let arr=[1,2,3]
+   arr.push(4);
+   console.log(arr);//output:[ 1, 2, 3, 4 ]
+
+8)pop():
+Ex:let arr=[10,20,30,40]
+   arr.pop();
+   console.log(arr);//output:[10,20,30](last element will be removed)
+
+9)concate:
+Ex: let arr1=[1,2,3]
+   let arr2=[4,5,6]
+   console.log(arr1.concat(arr2));//output:[1,2,3,4,5,6]
+
+etc...
+

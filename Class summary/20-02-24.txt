@@ -1,0 +1,128 @@
+Here we discussed Actions on the data.
+1)Arithmetic Operations:
+  These operations can be used with variables or directly with values. Additionally, you can combine them within more complex expressions.
+  =>add(+),sub(-),multiply(*),division(/),modulus(%),increment(++),decrement(--).
+  Ex: 1) let sum =3+2;
+         console.log(sum);//output:5
+
+      2)let mod=8%2;
+        console.log(mod);//output:0
+
+      3)let a=4;
+         a++;
+         console.log(a);//output:5  
+etc..... 
+
+2)Assignment Operators:
+  These operators allow you to perform an operation and assign the result to the variable.
+  =>==(equals),>=(greater-than),<=(less-than),!=(not equals).
+  Shorthand assignment operators:=,'+=','-=','*=','/=','%='.
+  Ex: 1)let x=3;
+         x+=2;(equals to x=x+2;)
+        console.log(x);//output:6
+      
+      2)let y=10;
+        y/=2;
+        console.log(y);//output:5
+
+      3)let z=11;
+         z%=3;
+         console.log(z);//output:2
+etc....
+
+3)Comparision Operators:
+  These operators are fundamental for creating logical conditions and comparisons in JavaScript.
+  =>'==','==='(strict equality),'!=','!=='(strict inequality),'>','<','>=','<='.
+  Ex: 1)let b=15;
+        console.log(b=='15');//output:true
+      
+      2)let c=5;
+        console.log(c>8);//false  
+
+      3)let r=10;
+        console.log(r==='10');//false(becoz it checks both value and its type i.e,first r is number and second r is string type).
+
+      4)let d=20;
+        console.log(d!=='20');//true(because it checks both type and value).
+
+4)Logical Operators:
+  These operators are commonly used to create more complex conditions and control flow in JavaScript programs.
+  =>'&&'(AND),'||'(OR),'!'(NOT).
+  Ex: 1)let p=10;
+        let q=12;
+        let s=18;
+        if(p<=q && p<=s)
+        {
+          out=p;
+        }
+       else if(q<=p && q<=s)
+        {
+          out=q;
+        }
+       else{
+        out=s;
+        }     
+        console.log(out);//output:10
+        
+     2) let a=8;
+        let b=3;
+        console.log(a>10 || b<5);//true
+
+5) Conditional Statemets:
+  These statements are used to make decisions.
+  =>'if','else if','else'.
+Ex: 1)If given number is positive then increment it, else decrement the number.
+    let n=10;
+    if(n>0){
+      n++;
+    }
+    else{
+      n--;
+    }
+    console.log(n);//output:11
+
+    2)Find the greatest among three numbers.
+      let p=10;
+        let q=12;
+        let s=18;
+        if(p>=q && p>=s)
+        {
+          out=p;
+        }
+       else if(q>=p && q>=s)
+        {
+          out=q;
+        }
+       else{
+        out=s;
+        }     
+        console.log(out);//output:18
+
+    3)Find the minimum among three numbers.
+      let p=10;
+        let q=12;
+        let s=18;
+        if(p<=q && p<=s)
+        {
+          out=p;
+        }
+       else if(q<=p && q<=s)
+        {
+          out=q;
+        }
+       else{
+        out=s;
+        }     
+        console.log(out);//output:10
+
+    4)Check given number is even or odd.
+      let g=8;
+      if(g%2==0)
+      {
+        console.log("number is even");
+      }
+      else{
+        console.log("number is odd");//output:number is even.
+      }
+
+           

@@ -2,7 +2,6 @@
 
 //We can declare variable using let, var  and const keyword//
 
-//using let keyword//
 var num=45;
 console.log(typeof(num));
 

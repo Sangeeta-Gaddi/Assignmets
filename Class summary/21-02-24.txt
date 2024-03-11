@@ -1,0 +1,65 @@
+Here we discussed the following topics.
+
+1)Array:Is the data structure used to store the same type of related data.
+Syntax: keyword variable (assignmentoperator) [values/elements]
+Ex: let array=[1,2,3,4,5]
+
+*We can acces array elements using its indexvalue.
+Ex: let arr=[10,20,30,0,50]
+    console.log(arr[2]);//output:30
+
+2)Objects:Is als a data storage,when we want to store real world data of differnt types(string,number,int etc) together as one unit we call for objects.
+  Ex: To store employess details.
+      let emp={
+        name:"Advik",
+        id:250,
+        age:23,
+        designation:"Manager"
+      };
+* We can access the object values as follws:
+  Syntax : variable name .(dot operator) key
+  Ex: console.log(emp.name);
+
+3)Looping Statemets:
+These statements provides code reusability to do specific task.
+=>'for','while'
+
+*. Examples using for loop:
+Ex:1)Print values from 1 t0 10
+     let n=1;
+     for(n=1;n<=10;n++){
+        console.log(n);//output:1 2 3 4 5 6 7 8 9 10
+     } 
+
+2)Print odd numbers from 1 to 100.
+  for(let i=1;i<100;i=i+2)
+  {
+    console.log(i)
+  }
+
+3)Print numbers from 10 to 1.
+  for(let z=10;z>=1;z--){
+    console.log(z)
+  }
+
+*.Example using while loop:
+1) Print values from 1 to 10.
+let n=1
+while (n<=10){
+    console.log(n)
+    n++;
+}
+
+2)Print numbers from 10 to 1.
+let num=10
+while(num>0){
+    console.log(num)
+    num--;
+}
+
+3)Print the values 2,4,8,16....64
+let p=2
+while(p<=64){
+    console.log(p)
+    p=p*2;
+}

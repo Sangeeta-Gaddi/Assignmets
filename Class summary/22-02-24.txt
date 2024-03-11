@@ -1,0 +1,97 @@
+Here we discussed some more programs.
+
+Ex:1)Program to store and access the given array.
+    let myArray=[1,2,3,4,5,6]
+    for(let i=0;i<myArray.length;i++){
+        console.log(myArray[i]);//output: 1 2 3 4 5 6
+    }
+
+2)program to find average score of class.
+    arr=[80,90,70,56,87]
+    let sscore=0;
+    for (let i=0; i<arr.length;i++)
+    {
+	sscore=sscore+arr[i];
+    }
+    let avg=sscore/arr.length
+    console.log(avg);//output:76.6
+
+3) program to find product of all elements in array
+    arr=[2,3,4,1,2]
+    let product=1;
+    for(i=0;i<arr.length;i++)
+    product=product*arr[i]
+    {
+    console.log(product)
+    }//output:48
+
+*  Functions:
+   It is a reusable piece of statements which perform specific task and return output.
+Ex:1) Calculate the area of circle.
+   function calcarea(radius)
+    {
+     area=3.14*radius*radius
+     return area
+    }
+   {
+    let area=calcarea(3)
+    console.log(area)
+   }  //output:28.26
+
+2)program to find maximum number among the given array    
+  let arr=[10,50,30,70,90]
+function findmax(arr)
+{
+ let max=arr[0]
+        for(i=1;i<arr.length;i++)
+    {
+           if(max<arr[i])
+        {
+        max=arr[i]
+        }
+    }
+    return max
+
+}
+console.log(findmax(arr));//output:90
+
+3)Program to find minimum among the given array.
+let arr=[20,90,70,100,25]
+function findmin(arr)
+{
+    let min=arr[0];
+    for(i=1;i<arr.length;i++)
+    {
+       if( min>arr[i])
+        {
+        min=arr[i];
+        }
+    }
+    return min
+}
+console.log(findmin(arr))//output:20
+
+4)Program to find secondminimum number of array.
+function findsecmin(arr) {
+    
+    let min = Infinity;
+    let secmin = Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            secmin = min;
+            min = arr[i];
+        } else if (arr[i] < secmin && arr[i] !== min) {
+            secmin = arr[i];
+        }
+    }
+
+    return secmin;
+}
+ array = [5, 2, 8, 10, 7];
+  secmin = findsecmin(array);
+console.log(secmin);//output:5
+
+
+
+

@@ -1,0 +1,46 @@
+* Introduction to Git.
+
+* Git:It is defined as VCS(Version Control system).
+* There are three types of VCS:
+1) Local Version Control System(Local VCS):Current working space,only you have the access.
+2) Centralized Version Control System(Centralized VCS):Remote access(Access for everyone).
+3) Distributed Version Control System(Distributed VCS):Includes both local and centralized VCS.
+
+* Git Commands:
+1. git init:used to initialize git repository.
+
+2. touch "filename":used to create file.
+
+3. mkdir "foldername":used to creates folder.
+
+4. rm "filename":used to delete file.
+
+5. rm -rf "foldername":used to delete folder.
+
+6. git add "filename":used to add file.
+
+7. git status:displays the status of working directory and staging area.
+
+8. git commit -m "message":used to commit the changes.
+
+9. vi "filename":used to edit the file contents.
+
+10. cat "file name":used to see the changes in terminal itself.
+
+11. ls:lists all the files.
+
+12. ls -la:shows the hidden files also.
+
+13. git log:to get commit id.  
+
+
+
+
+
+
+
+
+
+
+
+
