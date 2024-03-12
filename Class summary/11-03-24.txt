@@ -1,0 +1,122 @@
+*  Sum of elements of Cummulative array is discussed:
+*  Equilibrium indexes is discussed.
+*  CummulativeEvenArray and CummulativeOddArray:
+*  Introduction to Carry_forward Technique.
+
+* Sum of elements of Cummulative array:
+We have, Sum of elements:[L,R]
+1) sum [L to R]=cumArr[R]-cumArr[L-1], (L!=0)
+
+2) sum[0 to R]=cumArr[R], (L=0)
+  
+Ex: Consider the array:
+    arr=[-3,2,5,6,7,8,9,-1]
+    cumArr=[-3,-1,4,10,17,25,34,33]
+
+We can have, sum of cumArr of given range = cumArr[R]-cumArr[L-1]
+          Ex: sum[5,7]=cumArr[R]-cumArr[L-1]
+                      =cumArr(7)-cumArr(4)
+                      =33-17
+                      =16
+
+* Equilibrium indexes:
+Ex: Given N array elements get the count of equilibrium indexes, an index is said to be equilibrium if sum of all elements before ith index equals to sum of elements after ith index.
+    arr = [-2,5,7,4,-1];
+    let cumArr = [arr[0]];
+
+    for (let i = 1; i < arr.length; i++) {
+       cumArr[i] = cumArr[i - 1] + arr[i];
+     }      
+
+      let count = 0;
+      let N = arr.length;
+      for (let i = 1; i < N - 1; i++) {
+      let LS = cumArr[i - 1];
+      let RS = cumArr[N - 1] - cumArr[i];
+        if (LS === RS) {
+         count++;
+     }
+   } 
+     console.log(count); //output:1
+
+* CummulativeEvenArray and CummulativeOddArray:
+1) CummulativeEvenArray:
+   cumEvenArr[i]=sum of even index[0 to i]
+   cumEvenArr[i]=arr[0], i=0
+                 cumEvenArr[i-1]+arr[i], i/2=0 && i>0
+                 cumEvenArr[i-1], i/2!=0 && i>0
+
+2)CummulativeOddArray:
+ cumOddArr[i]=0, i=0
+              cumOddArr[i-1]+arr[i], i/2!=0 && i>0
+              cumOddArr[i-1], i/2=0 && i>0
+
+Ex: arr=[-1,5,4,6,8,9,11,0]
+    cumEvenArr=[-1,-1,3,3,11,11,22,22]
+    cumOddArr=[0,5,5,11,11,20,20,20]
+
+Ex:Calculate cumEvenArr and cumOddArr when array is given:
+    function cumulativeEvenOddArray(arr) {
+    const n = arr.length;
+    let cumulativeEven = [0];
+    let cumulativeOdd = [0];
+    let evenSum = 0;
+    let oddSum = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (arr[i] % 2 === 0) {
+            evenSum += arr[i];
+        } else {
+            oddSum += arr[i];
+        }
+        cumulativeEven.push(evenSum);
+        cumulativeOdd.push(oddSum);
+    }
+
+    return {
+        cumulativeEven,
+        cumulativeOdd
+    };
+}
+
+const array = [1, 2, 3, 4, 5, 6];
+const result = cumulativeEvenOddArray(array);
+console.log(result.cumulativeEven);
+console.log(result.cumulativeOdd);
+
+
+* Carry_forward Technique:This technique is used when we have to compare the same things repeatedly.
+-> Approaching from opposite direction, by carry-forwarding the required value. 
+
+* Examples:
+1) Find the count of pair (i,j) such that i<j and s[i]='a' and s[j]='g', where 's' is the character array.
+   //without Carry-forward technique//
+   let s=['a','d','g','a','g','a','g','f','g']
+   let count=0;
+   let N=s.length;
+   for(let i=0;i<N;i++)
+   {
+      for(let j=i+1;j<N;j++)
+        {
+        if(s[i]=='a' && s[j]=='g')
+        count++;
+        }
+   }
+      console.log(count);//output:9
+
+  //using Carry_forward technique//
+*  Find the count of pair (i,j) such that i<j and s[i]='a' and s[j]='g', where 's' is the character array.
+    let s=['a','d','g','a','g','a','g','f','g']
+    let count_g=0;
+    let count_pairs=0;
+    let N=s.length;
+    for (let i=N-1;i>=0;i--){
+        if(s[i]=='g')
+          count_g=count_g+1
+        if(s[i]=='a')
+          count_pairs=count_pairs+count_g;
+   
+      }
+        console.log("Count of pairs=",(count_pairs))
+        console.log("Count of g in array=",(count_g));//output:Count of pairs(i,j) = 9
+                                                               Count of g in array= 4

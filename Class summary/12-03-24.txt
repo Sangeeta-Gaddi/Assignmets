@@ -1,0 +1,51 @@
+* Continuation of Carry-forward Technique: 
+* Introduction to Sub Arrays.
+
+* Continuation of Carry-forward Technique: 
+  Examples: 
+1) Given an array find the count of leaders.An element is called leader if that is greater then all the elements on the right of it.
+   arr=[5,4,6,1,-1,0,5,2]
+   let count=0;
+   let N=arr.length;
+
+   for(let i=0;i<N;i++){
+    let flag=true
+    for(let j=i+1;j<N;j++){
+        if(arr[i]<=arr[j]){
+            flag=false;
+            break;
+        }
+    }
+    if(flag==true)
+    count++;
+  }
+     console.log(count);//output:3
+
+//With Carry-forward approach//
+Ex: arr=[5,4,6,1,-1,0,5,2]
+    let N=arr.length;
+    let max=arr[N-1];  //(last element be the maximum element/leader element)//
+    let cL=1;          // (cL is the count of leader element,last Element be maximum element so initialize to 1)//
+    for(let i=N-2;i>=0;i--)
+    {
+    if(arr[i]>max)
+    {
+      max=arr[i];
+        cL++;
+    } 
+  }
+     console.log(cL);//output:3
+
+* Introduction to SubArrays:
+  It is continuous part of an array with same order.
+
+Ex: arr=[5,4,1,2]
+    subarray:
+    [5]        [4]      [1]    [2]
+    [5,4]      [4,1]    [1,2]
+    [5,4,1]    [4,1,2]
+    [5,4,1,2]
+      4       +  3     +  2    + 1= 10
+
+Note: For a given array number of subarray can be calculated aa the sum of natural numbers.
+      i.e, given array of length N then the number of subarray possible=N*(N-1)/2.
