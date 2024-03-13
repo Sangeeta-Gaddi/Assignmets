@@ -45,8 +45,6 @@ Examples:
             currentSubarraySum += arr[i]; // Calculate sum of current subarray
         }
         maxSum = Math.max(maxSum, currentSubarraySum); 
-        // Update maxSum if currentSubarraySum is greater(maxSum holds the maximum subarray encountered).
-    (Math.max is the inbuilt function which gives the maximum when two values are given to compare, used to compare the currentSubarraysum with maxsum)//
     }
    }
 
