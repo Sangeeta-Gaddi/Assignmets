@@ -1,0 +1,72 @@
+* Examples are discussed:
+
+Examples:
+
+1)  How to calculate the subarray of given array:
+    let arr = [2,4,5];
+  for(let i =0; i<arr.length; i++){
+    for(let j=i; j<arr.length; j++){
+           let subarr = [];
+        for(let k=i; k<=j;k++){
+            subarr.push(arr[k]);
+        }
+        console.log(subarr)
+        subarr =[];
+     }  
+  }                  //output:[2]
+                              [2,4]
+                              [2,4,5] 
+                              [4]
+                              [4,5]
+                              [5]
+
+2)  Given an array print the sum of all subarray:
+    let arr=[1,2,3]
+    let sum=0;
+    let N=arr.length;
+    for(let L=0;L<N;L++){
+    for(let R=L;R<N;R++){
+        for(let i=L;i<=R;i++)
+        sum=sum+arr[i]
+    }
+  }
+  console.log(sum);//output:20
+
+3)  Find the maximum subarray sum:
+    let arr = [1, 2, 3];
+    let maxSum = Number.MIN_SAFE_INTEGER; // Initialize maxSum to the smallest possible integer value
+    let N = arr.length;
+
+    for (let L = 0; L < N; L++) {
+    for (let R = L; R < N; R++) {
+        let currentSubarraySum = 0; // Reset currentSubarraySum for each subarray
+        for (let i = L; i <= R; i++) {
+            
+            currentSubarraySum += arr[i]; // Calculate sum of current subarray
+        }
+        maxSum = Math.max(maxSum, currentSubarraySum); 
+        // Update maxSum if currentSubarraySum is greater(maxSum holds the maximum subarray encountered).
+    (Math.max is the inbuilt function which gives the maximum when two values are given to compare, used to compare the currentSubarraysum with maxsum)//
+    }
+   }
+
+    console.log(maxSum);
+
+4)  Find the minimum subarray sum:
+    let arr = [1, 2, 3];
+    let minSum = Number.MAX_SAFE_INTEGER; 
+    let N = arr.length;
+
+   for (let L = 0; L < N; L++) {
+    for (let R = L; R < N; R++) {
+        let currentSubarraySum = 0; // Reset currentSubarraySum for each subarray
+        for (let i = L; i <= R; i++) {
+            
+            currentSubarraySum += arr[i]; // Calculate sum of current subarray
+        }
+        minSum = Math.min(minSum, currentSubarraySum); // Update minSum if currentSubarraySum is smaller
+    }
+  }
+
+    console.log(minSum);//output:1
+
