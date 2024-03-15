@@ -1,0 +1,113 @@
+Here Bit Operations are discussed.
+=> AND(&),OR(|),XOR(^),Left Shift(<<),Rigth Shift(>>),NOT(^).
+
+Bit Operations:
+A|B|Y1(A&B)|Y2(A|B)|Y3(A^B)
+0|0|  0    |  0    |  0
+0|1|  0    |  1    |  1
+1|0|  0    |  1    |  1
+1|1|  1    |  1    |  0
+
+These operations are used as below:
+let a =20
+let b=14
+let c=a&b 
+ To find c we do following:
+ First convert given number to binary form:
+ We convert the given number to binary by dividing it by 2 and using the remainder to get binary number.
+ i.e, a=20
+      20/2=10--0(remainder)
+      10/2=5--0
+      5/2=2--1
+      2/2=1--0
+      =>10100
+
+similarly: b=14
+           14/2=7--0(remainder)
+           7/2=3--1
+           3/2=1--1
+           =>1110
+Therefore, a&b: 10100
+                01110
+            a&b=00100(this is the binary value of number 4)
+
+Binary value is converted to decimal as follows:
+Considering above example answer :
+Ex:   00100
+=     0*2^4+0*2^3+1*2^2+0*2^1+0*2^0 
+=     1*2^2
+=     4
+So the decimal value of 00100 is 4.
+
+Characteristics of bit operations:
+1) a& 1= 0 if even
+         1 if odd 
+2) a&a = a
+3) a|a = a
+4) a^a = 0
+5) a&0 = 0
+6) a|0 = a 
+7) a^0 = a 
+8) a&b=b&a
+9) a&(b&c)=(b&a)&c
+
+Ex:1) a^b^c^b^a^c
+      we can rearrange the above expression,and applying the characteristics:
+      a^a^b^b^c^c  (applying characteristic 4)
+      0^0^0
+      0
+
+Example:
+1) Given N number where each number is occuring two times except one number, Find the number which occuring one time.
+   let arr = [2,2,3,4,4,5,5];
+   let output = 0;
+   for (let i = 0; i < arr.length; i++) {
+    output ^= arr[i]; 
+   }
+   console.log(output);//output:3
+
+*) Left Shift Operator(<<):Shifts the bits of number to left by a specified number of positions.
+Ex: let a=5; 
+    let c=a<<1; //(left shift by 1 position)//
+    console.log(c); //output:10   
+
+Note: Left Shift can be calculated as: a<<n=a*2^n 
+      Ex:a=10,n=2 (shift left by 2 bits)
+         a<<n= 10<<2=10*2^2
+                    =10*4
+                    =40
+
+*) Rigth Shift Operator(>>):Shifts the bits of number to right by a specified number of positions.
+Ex: let d=10;
+    let b=d>>2;
+    console.log(b);//output:2
+
+Note: Right Shift can be calculated as:a>>n=a/2^n
+      Ex:a=10,n=2 (shift right by two bits)
+         a>>n=10>>2=10/2^2=10/4=2.5=2
+
+Examples: 
+1)  Given number a and i check if ith bit of 'a' is set or not.
+          let a=10;
+          let i=1;
+          let bitmask=1<<i;
+          if ((a & bitmask)!==0) {
+            console.log("bit is set "); 
+         } else {
+            console.log("bit is not set");
+         }     
+    //output:bit is set
+
+2)  Count the number of set bits in a given number 'a'.  
+     function SetBitscount(num) {
+    let count = 0;  
+    while (num) {   
+        count += num & 1;  
+        num >>= 1;  
+    }
+    return count;  
+}
+
+let number = 20; (10100)
+console.log(SetBitscount(number));
+//output:2 (because number 20 contains 2 sets in its binary representation 10100)
