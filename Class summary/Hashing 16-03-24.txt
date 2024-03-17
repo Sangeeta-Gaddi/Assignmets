@@ -1,0 +1,48 @@
+* Here bit operations examples and Hashing concept are discussed.
+
+Ex:1) Given a number N,set ith bit of N .
+       function setithbit(N,i){
+        let mask=1<<i;
+        return N|mask;
+       }
+
+    let N=21 (10101)
+    let i=3 (0 based index)
+    let output=setithbit(N,i);
+    console.log(output);//output:29 (11101)
+
+    2) Given a number N,unset ith bit of N.
+        function unsetithbit( N,i){
+        let mask = ~(1<<i);
+        return N & mask;
+
+    }
+     let N = 21//binary value (10101)
+     let i = 2 // 0 based 
+     let result = unsetithbit(N,i);
+     console.log(result);//output:17 (binary value 10001)
+
+*  Hashing: Hashing is manifested as objects in javascript.
+-> Stored as key:value pair
+
+   Hashmap-- key:value -> objects
+   Hashset--{key} -> set
+
+Ex:1) Given an integer array, print duplicate numbers.
+      let array= [2,2,1,5,6,7,6,2];
+      let object = {};
+
+      for (let i = 0; i < array.length; i++) {
+       let num = array[i];
+       object[num] = (object[num] || 0) + 1;
+    }
+
+     console.log("Duplicate numbers:");
+
+    for (let num in object) {
+      if (object[num] > 1) {
+         console.log(num);
+     }
+  }
+//output:2
+         6
