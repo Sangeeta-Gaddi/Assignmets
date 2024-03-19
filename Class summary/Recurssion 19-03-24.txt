@@ -1,0 +1,50 @@
+* Here Recurssion topic is discussed:
+
+Recursion : function calls itself within its own definition.
+-> If we can express a bigger problem in terms of smaller same problem then it is case for recurssion.
+ 
+ * How to write recurssive code:
+1) Assumption - Coming up with a function and assuming that it works.
+2) Main logic - Solve the assumption with subproblem.
+3) Base case  - When should your code stop. 
+
+Examples:
+1) Given N find the sum from 1 to N.
+   function sum(n){
+    if(n==1){
+        return 1;
+    }else{
+        return n+sum(n-1);
+    }
+   }
+  
+   let n=5;
+   console.log(sum(n));//output:15
+
+2) Given N find the factorial of N.
+   function factorial(number){
+    if(number==1){
+        return 1;
+    }else{
+        return factorial(number-1)*number
+    }
+   }
+ 
+   let number=5
+   console.log(factorial(number));//output:120
+
+3) Given a=0, b=1, N print the fibonacii series.
+  function fibonacci(a, b, n) {
+    if (n === 0) {
+        return a;
+    }
+
+    console.log(a);
+
+    return fibonacci(b, a + b, n - 1);
+  }
+   const a = 0;
+   const b = 1;
+   const n = 7;
+   console.log("Fibonacci series:");
+   fibonacci(a, b, n); //output:0,1,1,2,3,5,8

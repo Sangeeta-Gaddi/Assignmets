@@ -1,0 +1,114 @@
+* Examples on hashing are discussed.
+
+Ex:1) Find first non repeating element in the array.
+      let arr = [3,3,4,2,2,5];
+      let obj = {};
+
+      for (let i = 0; i < arr.length; i++) {
+      let num = arr[i];
+      obj[num] = (obj[num] || 0) + 1;
+     }
+
+     let firstNonRepeating = null;
+
+    for (let i in obj) {
+    if (obj[i] === 1) {
+        firstNonRepeating =(i); 
+        break; 
+    }
+   }
+  console.log("First non-repeating element:", firstNonRepeating);//output:4
+
+2) Given an array check if any subarray has sum=0.
+   let array=[2,2,1,-3,4,3,1,-2,-3,2]
+   let cumArr=[];
+   cumArr[0]=array[0];
+   let object={};
+
+   for(let i=1;i<array.length;i++){
+    
+      cumArr[i]=cumArr[i-1]+array[i];
+   }
+   console.log("Cumulative array of given array",cumArr);
+
+  for(let i=0;i<cumArr.length;i++){
+    let num=cumArr[i];
+    object[num]=(object[num]||0)+1;
+    
+  }
+     console.log(object);
+
+  for(let i in object){
+    if(object[i]>1){
+        console.log("Sub array has sum equal to zero because cumArr of given array has repeating element",[i]);
+    }
+ }
+//output:Cumulative array of given array [2,  4, 5, 2, 6,9, 10, 8, 5, 7]
+{ '2': 2, '4': 1, '5': 2, '6': 1, '7': 1, '8': 1, '9': 1, '10': 1 }
+Sub array has sum equal to zero because cumArr of given array has repeating element [ '2' ]
+Sub array has sum equal to zero because cumArr of given array has repeating element [ '5' ]
+
+3) Given an N array elements.Calculate number of unique elements in every window of size k.
+    function countUniqueElementsInWindows(arr, k) {
+      const res = [];
+      for (let i = 0; i <= arr.length - k; i++) {
+        const window = arr.slice(i, i + k);  
+        console.log(window);
+        const uniqueCount = countUnique(window);
+        res.push(uniqueCount); 
+    }
+       return res
+  }
+    function countUnique(arr) {
+    const unique = new Set(arr); 
+    return unique.size; 
+  }
+   const arr = [2, 4, 3, 8, 9, 4, 9, 4, 10];
+   const k = 3;
+   const output = countUniqueElementsInWindows(arr, k);
+   console.log("The number of  unique elements in every window" ,output); 
+//output:The number of  unique elements in every window [3, 3, 3, 3, 2, 2, 3]
+
+4) For given a string print the duplicate words and its count.
+    let string = "A gentle gentle breeze breeze blew blew through through the palm palm trees trees, carrying carrying the scent scent of salt salt and and seaweed seaweed."
+    let wordsArray = string.split(/\s+/); // Split the string into an array of words
+    let wordobj = {};//used to  initialize empty object used to store wors frequencies
+    let duplicatewords=[];//emplty array to store duplicate words
+
+    for (let i = 0; i < wordsArray.length; i++) { 
+       let word = wordsArray[i];
+      wordobj[word] = (wordobj[word] || 0) + 1; 
+    }
+
+    let repeatedCount = 0;
+
+    for (let word in wordobj) {
+      if (wordobj[word] > 1) {
+        repeatedCount++;
+        duplicatewords.push(word);
+    }
+  }
+   console.log("Number of repeated words:", repeatedCount);
+   console.log("Duplicte words",duplicatewords);
+   output:Number of repeated words: 10
+          Duplicte words ['gentle','breeze','blew','through','the','palm','carrying','scent','salt','and']
+
+5) In given string delete the duplicates.
+  function deleteduplicate(str) {
+    let words = str.split(/\s+/); 
+    let wordSet = {}; 
+    let uniqueWords = []; 
+
+    for ( let i=0;i<words.length;i++) {
+        if (!wordSet[words[i]]) {
+            uniqueWords.push(words[i]); 
+            wordSet[words[i]] = true; 
+        }
+    }
+
+    return uniqueWords.join(" ");
+}
+
+const str = "A gentle gentle breeze breeze blew blew through through the palm palm trees trees, carrying carrying the scent scent of salt salt and and seaweed."
+console.log(deleteduplicate(str));
+//output:A gentle breeze blew through the palm trees trees, carrying scent of salt and seaweed.
