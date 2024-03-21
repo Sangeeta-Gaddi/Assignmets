@@ -1,0 +1,83 @@
+* Here Execution flow topic is discussed:
+
+=> When the javascript code starts to execute:
+* Execution context will be created:
+->Getting required environment for piece of code execution.
+-> It encapsulates environment required for the piece of javascript code to execute.
+-> It has two phases:
+1) Memory allocation phase.
+2) Code execution phase.
+* When every function call is made then execution context is created and entry of the same is made into call-stack.
+* The first execution context entry is called as Global Execution Context.
+
+Example:
+ let n1= 5;
+ let n2= 6;
+ function multiply(a,b){
+  return a*b;
+  }
+  let output= multiply(n1,n2);
+  console.log(output);
+-> Execution flows can be seen as below:
+ 1) Memory allocation phase:
+ ->Here n1,n2 and output vriables are assigned with undefined,but function variable (multiply) is defined with its function.
+   n1=undefined,n2=undefined,output:undefined,multiply{}.
+ 2) Code execution phase:
+ ->Here n1,n2 are assigned with values 5 and 6 respectively, and function call(multiply) is performed and output is assigned with values 30.
+   n1=5,n2=6 and output:30
+
+* Difference between let and var:
+1) let:
+-> let variables are 'block' scoped.
+-> let variables cannot be accessed before initialization.
+-> We cannot redeclare the variables using let.
+
+2) var:
+-> var variables are 'function' scoped.
+-> var variables can be accessed before initialization.
+-> We can redeclare the variables using var.
+
+Examples:
+1)let variables are block scoped.
+let z=10;
+  if(true){
+     let z=20;
+     console.log(z);
+ }
+ console.log(z);
+//output:inside if block we get:20
+//       outside if block we get:10 
+
+2)var variables are function scoped.
+  function scope(){
+    var p=10;  
+     if(true){
+         var q=20;
+         console.log(q);//output:20
+     }
+     console.log(p);//output:10
+     console.log(q);//output:20
+ }
+ scope();
+=> Here p and q are declared using 'var' within function 'scope', q is accessible outside the if block because 'var' declarations are hoisted to the top of function. Therefore 'q' is function-scoped and accessible throughtout entire function scope(). 
+
+3)let variables access:
+  console.log(a);
+  let a=10;
+//output: ReferenceError: Cannot access 'a' before initialization(let variables cannot be accessed before initialization).
+
+4)var variables access:
+  console.log(d);
+  var d=20;
+//output:undefined(it won't throws error, it gives the output as:undefined).
+
+5)Redecalre of variables using let:
+  let c = 5;
+//let c = 10;
+//output:Throws SyntaxError: Identifier 'c' has already been declared(we get error because using let we cannot redeclare the variables).
+
+6)Redecalre of variables using var:
+ var s = 5;
+ var s = 10;
+ console.log(s);
+ //output:10(we get output because we can redeclare the variables using var).
