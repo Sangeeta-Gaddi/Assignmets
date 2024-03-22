@@ -1,0 +1,48 @@
+* Here OOPS(Object-Oriented Programming) concept is discussed:
+
+* OOPS:It talks about organizing code, especially how to create complex variables and define functions which acts on them.
+
+1) Class: Class is a blueprint to organize the input data.
+-> It helps us to represent real world related data as on entity.
+   Syntax:
+   class  Classname{
+    constructor(property1,property2){
+        this.property1=property1;
+        this.property2=property2;
+    }
+    method1(){
+        method logic
+    }
+
+    method2(){
+        method logic
+    }
+   } 
+
+* We create instance of class using the 'new' keyword followed by the class name and parantheses if the class has a constructor.
+  Syntax:
+  let instance=new Classname("data);
+
+  Example:
+   class student{
+    constructor(name,age,grade){
+        this.name=name;
+        this.age=age;
+        this.grade=grade;
+    }
+
+    displayInfo(){
+        console.log("Name: " + this.name + ", Age: " + this.age + ", Grade: " + this.grade);   
+    }
+   }
+
+  //creating instance of class student
+  let student1=new student("Advik",5,"A");
+  let student2=new student("Nishita",2,"B");
+
+  //displaying information of each student
+  student1.displayInfo();
+  student2.displayInfo();
+//output:Name: Advik, Age: 5, Grade: A
+//       Name: Nishita, Age: 2, Grade: B
+
