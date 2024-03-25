@@ -1,0 +1,19 @@
+* Here LinkedList topic is discussed.
+
+* LinkedList:It is a data structure where each element is called as node, points to the next node in the sequence.
+-> It consists of nodes where each node contains data and a reference to the next node in the sequence. This allows for dynamic 
+  memory allocation and efficient insertion and deletion operations compared to arrays. 
+
+Example:
+class Node{
+    constructor(name,phnum){
+     this.name= name;
+     this.phnum=phnum;
+     this.next=null;
+     }
+    }
+  let conct1 = new Node("Advik",9878645705)
+  let conct2 = new Node("Nishita",9878654530)
+  conct1.next = conct2;
+  console.log(conct1.name);  //output:Advik
+  console.log(conct1.next.name); //output:Nishita (will give name from conct2)

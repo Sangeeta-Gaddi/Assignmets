@@ -1,0 +1,68 @@
+* Here example is discussed.
+
+Example: How to represent Bank account entity.
+
+class BankAccount{
+    constructor(name,accnum,ifsc,branch,balance){
+        this.name=name;
+        this.accnum=accnum;
+        this.ifsc=ifsc;
+        this.branch=branch;
+        this.balance=balance;
+    }
+
+//credit amount
+    credit(amount){
+        this.balance+=amount;
+        console.log(`Amount credited:${amount}, Available balance:${this.balance}`);
+    }
+//debit amount
+debit(amount){
+    if(this.balance>amount){
+        this.balance-=amount
+        console.log(`Amount debited:${amount}, Available balance:${this.balance}`);
+    }else{
+        console.log("Insufficcient Balance");
+    }
+}
+//check balance
+checkbalance(){
+    console.log(`Available balance:${this.balance}`);
+}
+}
+//Now create instance
+let myAccount=new BankAccount("Advik",5142600,"SBI1005","Basavanagar",500);
+
+//Now use created instance to get required output
+myAccount.checkbalance();
+myAccount.debit(200);
+myAccount.credit(400);
+myAccount.debit(1000);
+/*output:Available balance:500
+         Amount debited:200, Available balance:300
+         Amount credited:400, Available balance:700
+         Insufficcient Balance*/
+
+//We can add one more feature by inheriting properties from parent class(BankAccount).
+//Child class(SavingsAccount) which inherits the properties of parent class i.e BankAccount
+class SavingsAccount extends BankAccount{
+    constructor(name,accnum,ifsc,branch,balance){
+        super(name,accnum,ifsc,branch,balance)
+        this.interest=6;
+    }
+
+add_interest(){
+console.log("Savingsamount..add_interest");
+this.balance+=(this.interest/100*this.balance)
+}
+}
+
+let mySavingaccount=new SavingsAccount("Nishita",54092340,"ICIC2004","Ilkal",600);
+mySavingaccount.checkbalance();
+mySavingaccount.credit(400);
+mySavingaccount.debit(500);
+mySavingaccount.add_interest();
+/*output:Available balance:600
+         Amount credited:400, Available balance:1000
+         Amount debited:500, Available balance:500
+         Savingsamount..add_interest*/
