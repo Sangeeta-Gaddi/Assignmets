@@ -1,0 +1,143 @@
+* Here stack and queue topics are discussed.
+
+* Stack: Stack is a data structure which operates on principle if Last In First Out.
+-> It supports the above principle by providing two operations:
+1) Push: This operation allows addition of element to end or top of the stack.
+2) Pop: This operation allows removing of elementonly from end or top of the stack.
+* Other useful operations are:
+3) isEmpty: This operation used to check whether the stack contains any elements.
+4) size: This operation allows us to retrive the number of elements contained within stack.
+5) Peek: This operation used to view the top element without removing it.
+
+Example: Create a stack with array.
+
+class stack{
+    constructor(maxsize){
+        this.items=[];
+        this.maxsize=maxsize;
+    }
+
+    //check if stack is empty
+isEmpty(){
+    return this.items.length===0;
+}
+
+//push element
+push(element){
+    if(this.isFull()){
+        console.log("Stack is full");
+    }else{
+    this.items.push(element);
+    console.log(`pushed ${element} onto the stack`);
+}
+}
+
+//check stack is full
+isFull(){
+    return this.items.length===this.maxsize;
+}
+
+//pop element
+pop(){
+    if(this.isEmpty()){
+        console.log("Stack is empty");
+}else{
+    let poppedelement=this.items.pop();
+    console.log(`popped ${poppedelement} from the stack`);
+}
+}
+
+//print current state of stack
+printstack(){
+    if(this.isEmpty()){
+        console.log("Stack is empty");
+    }else{
+        console.log("Current Stack",this.items);
+    }
+}
+}
+
+let mystack=new stack(3);
+mystack.push(10);
+mystack.push(20);
+mystack.push(30);
+/*output:pushed 10 onto the stack
+         pushed 20 onto the stack
+         pushed 30 onto the stack*/    
+mystack.push(40);
+//output:Stack is full
+mystack.printstack();
+//output:Current Stack [ 10, 20, 30 ]
+mystack.pop();
+mystack.pop();
+mystack.pop();
+/*output:popped 30 from the stack
+         popped 20 from the stack
+         popped 10 from the */
+mystack.pop();
+//output:Stack is empty
+
+
+* Queue:It is a data structure which works on principle of First In First Out.
+-> Queue is supported by the two operations:
+1) Enqueue: Adding the element to the queue.
+2) Dequeue: Removing the element from the front of queue.
+3) Peek: This operation used to view the top element without removing it. 
+
+Example: Create a queue with array.
+
+class queue{
+    constructor(){
+        this.items=[];
+        this.top=-1;
+    }
+
+//Add element to queuq
+    enqueue(element){
+        this.items.push(element);
+        this.top++;
+    }
+
+//Remove element
+dequeue(){
+    if(this.isEmpty()){
+        console.log("Queue is empty");
+    }else{
+    this.top--;
+    return this.items.shift();
+    }
+}
+
+//Peek at front element
+peek(){
+    if(this.isEmpty()){
+        console.log("Queue is Empty");
+    }
+    return this.items[0];
+}
+
+//check queue is empty
+isEmpty(){
+    return this.top===-1;
+}
+
+//get size
+size(){
+    return this.top+1;
+}
+
+//print queue
+printQueue(){
+    return this.items.slice(0, this.top + 1).join(' ');
+}
+}
+
+let myqueue=new queue();
+myqueue.enqueue(10);
+myqueue.enqueue(20);
+myqueue.enqueue(30);
+
+console.log(myqueue.printQueue());//output: 10 20 30
+console.log(myqueue.dequeue());//output: 10
+console.log(myqueue.peek());//output:20 (because 10 is removed using dequeue,so 20 will be next first element)
+console.log(myqueue.size());//output: 2(because we have only two elements after dequeue i.e 20 and 30).
