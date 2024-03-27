@@ -17,3 +17,252 @@ class Node{
   conct1.next = conct2;
   console.log(conct1.name);  //output:Advik
   console.log(conct1.next.name); //output:Nishita (will give name from conct2)
+
+//We can implement LinkedList and its operations as below:
+* Creating Class for Node
+class Node{
+    constructor(data,next=null){
+        this.data=data;
+        this.next=next;
+    }
+}
+
+let node1=new Node(100);
+console.log(node1);
+//output:Node { data: 100, next: null }
+
+* Creating LinkedList class
+class Linkedlist{
+    constructor(){
+        this.head=null;
+        this.size=0;
+    }
+}
+
+* Inserting first node to LinkedList
+class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+  
+    insertFirstNode(data) {
+      const newNode = new Node(data);
+      this.head = newNode;
+    }
+  
+    printList() {
+      let current = this.head;
+      while (current) {
+        console.log(current.data);
+        current = current.next;
+      }
+    }
+  }
+  
+  // Example usage:
+  const myList = new LinkedList();
+  myList.insertFirstNode(400);
+//   myList.insertFirstNode(100);
+//   myList.insertFirstNode(300);
+
+  myList.printList();
+  //output:400
+
+* Insert node at end(append)
+class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+  
+    insertAtEnd(data) {
+      const newNode = new Node(data);
+      if (!this.head) {
+        this.head = newNode;
+        return;
+      }
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  
+    printList() {
+      let current = this.head;
+      while (current) {
+        console.log(current.data);
+        current = current.next;
+      }
+    }
+  }
+  
+  // Example usage:
+  const myList = new LinkedList();
+  myList.insertAtEnd(1);
+  myList.insertAtEnd(2);
+  myList.insertAtEnd(3);
+  myList.printList(); // Output: 1, 2, 3(added sequentially first 1,then 2,then 3)
+
+  * Insert node at front(prepend)
+  class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+  
+    addAtFront(data) {
+      const newNode = new Node(data);
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+  
+    printList() {
+      let current = this.head;
+      while (current) {
+        console.log(current.data);
+        current = current.next;
+      }
+    }
+  }
+  
+  // Example usage:
+  const myList = new LinkedList();
+  myList.addAtFront(3);
+  myList.addAtFront(2);
+  myList.addAtFront(1);
+  myList.printList(); 
+
+  //output:1,2,3(the elemet 1 is added first ,the 2,then 3,  1 becomes head in LL,2 is inserted infront of 1,3 infront of 2)
+
+  * Delete node at front
+  class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+  
+    // Method to add a node at the end of the list
+    addNode(data) {
+      const newNode = new Node(data);
+      if (!this.head) {
+        this.head = newNode;
+        return;
+      }
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  
+    deleteAtFront() {
+      if (!this.head) return; // If the list is empty, nothing to delete
+      this.head = this.head.next; // Update the head to the next node
+    }
+  
+    printList() {
+      let current = this.head;
+      while (current) {
+        console.log(current.data);
+        current = current.next;
+      }
+    }
+  }
+  
+  // Example usage:
+  const myList = new LinkedList();
+  myList.addNode(1);
+  myList.addNode(2);
+  myList.addNode(3);
+  myList.deleteAtFront(); // Delete node at front
+  myList.printList(); // Output: 2, 3
+
+  * Delete node at end
+  class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+  
+    addNode(data) {
+      const newNode = new Node(data);
+      if (!this.head) {
+        this.head = newNode;
+        return;
+      }
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  
+    deleteAtEnd() {
+      if (!this.head) return; // If the list is empty, nothing to delete
+  
+      // If there's only one node in the list
+      if (!this.head.next) {
+        this.head = null;
+        return;
+      }
+  
+      let current = this.head;
+      let prev = null;
+  
+      // Traverse the list until the last node is reached
+      while (current.next) {
+        prev = current;
+        current = current.next;
+      }
+  
+      prev.next = null; // Set the next pointer of the second-to-last node to null
+    }
+  
+    printList() {
+      let current = this.head;
+      while (current) {
+        console.log(current.data);
+        current = current.next;
+      }
+    }
+  }
+  
+  // Example usage:
+  const myList = new LinkedList();
+  myList.addNode(1);
+  myList.addNode(2);
+  myList.addNode(3);
+  myList.deleteAtEnd(); // Delete node at end
+  myList.printList(); // Output: 1, 2
