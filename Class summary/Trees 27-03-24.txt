@@ -1,0 +1,130 @@
+* Here Trees topic is discussed:
+
+* Trees: It is a data structure which is more opted to reprsent the hierarchical data.
+-> Trees are composed of nodes.Each node has a value and a list of references to its child nodes.
+-> Helps for efficient searching, sometimes insertion becomes easy.
+
+* Some of the attributes of trees:
+1) Root-It is the topmost node.from which all other nodes descend.
+2) Parent node-It is a node that has one or more child nodes.
+3) Child node-It is a node that is connected to a parent node.
+4) Leaf node-It is a node that has no children.
+5) Height of node-It is the longest path of node to any of its descendent leaf node.
+
+* Binary tree: Binary tree is a tree structure in which every node has maximum of two child nodes(<=2 child nodes).
+
+Example:
+class Node{
+    constructor(data){
+        this.data=data;
+        this.left=null;
+        this.right=null;
+    }
+}
+
+let rootNode=new Node(6);
+let leftNode=new Node(4);
+let rightNode=new Node(7);
+
+rootNode.leftchild=leftNode;
+rootNode.rightchild=rightNode;
+
+console.log("Root node is:",rootNode.data);
+console.log("Leftchild is:",rootNode.leftchild.data);
+console.log("Rightchild is:",rootNode.rightchild.data);
+//output:Root node is: 6
+         Leftchild is: 4
+         Rightchild is: 7
+
+* Tree Travesal of Binary Tree:
+-> There are three types of tree traversal method:
+1) Inorder Traversal:Visits the leftnode,then parentnode and finally rightnode (LN(leftnode)->PN(parentnode)->RN(rightnode)).
+2) Preorder Traversal:Visits the parentnode,then leftnode and finally rightnode (PN->LN->RN).
+3) Postorder Traversal:Visits the leftnode,then rightnode and finally parentnode (LN->RN->PN).
+
+1) Inorder Traversal:(LN->PN->RN)
+Example:
+   class Node {
+    constructor(data) {
+      this.data = data; 
+      this.left = null; 
+      this.right = null; 
+    }
+  }
+  
+  function inorderTraversal(node) {
+    if (node !== null) {
+      inorderTraversal(node.left); // Traverse the left subtree recursively
+      console.log(node.data); // Output the value of the current node
+      inorderTraversal(node.right); // Traverse the right subtree recursively
+    }
+  }
+  
+  let rootNode = new Node(6);
+  rootNode.left = new Node(5);
+  rootNode.right = new Node(7);
+  
+  console.log("Inorder traversal:");
+  inorderTraversal(rootNode);
+//output:Inorder traversal:
+         5
+         6
+         7
+
+2) Preorder Traversal:(PN->LN->RN)
+Example:
+class Node {
+    constructor(data) {
+      this.data = data; 
+      this.left = null; 
+      this.right = null; 
+    }
+  }
+  
+  function preorderTraversal(node) {
+    if (node !== null) {
+      console.log(node.data); 
+      preorderTraversal(node.left); 
+      preorderTraversal(node.right); 
+    }
+  }
+  
+  let rootNode = new Node(6);
+  rootNode.left = new Node(5);
+  rootNode.right = new Node(7);
+  
+  console.log("Preorder traversal:");
+  preorderTraversal(rootNode);
+//output:Preorder traversal:
+         6
+         5
+         7
+
+3) Postorder Traversal:(LN->RN->PN)
+Example:
+class Node {
+    constructor(data) {
+      this.data = data; 
+      this.left = null; 
+      this.right = null; 
+    }
+  }
+  
+  function postorderTraversal(node) {
+    if (node !== null) {
+      postorderTraversal(node.left); 
+      postorderTraversal(node.right); 
+      console.log(node.data); 
+    }
+  }
+  
+  let rootNode = new Node(6);
+  rootNode.left = new Node(5);
+  rootNode.right = new Node(7);
+  
+  console.log("Postorder traversal:");
+  postorderTraversal(rootNode);
+//output:Postorder traversal:
+         5
+         7
+         6
