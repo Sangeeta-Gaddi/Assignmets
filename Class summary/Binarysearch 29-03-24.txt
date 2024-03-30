@@ -1,0 +1,69 @@
+* Here we discussed Binary Search and other topics are discussed.
+
+* Binary Search: It is a searching algorithm that finds the position of a target value or search element within a sorted array.
+-> It works only for sorted array.
+
+Example:
+Normal array=[0,-5,1,10,7,6,3]
+Sorted array=[-5,0,1,3,6,7,10]
+
+Note:
+1) mid=s+e/2 [startindex(s)+endindex(e)/2]
+2) Comparision:
+* searchelement<arr[mid]=>search in LP(left part)
+* searchelement>arr[mid]=>search in RP(right part)
+* searchelement=arr[mid]=>stop(we got our searchelement)
+
+function BinarySearch(arr, searchelement, start = 0, end = arr.length - 1) {
+    if (start > end) {
+        return -1; // Element not found
+    }
+
+    let mid = Math.floor((start + end) / 2); // Calculate the mid index of search interval
+    
+    if (arr[mid] === searchelement) {
+        return mid; // Element found
+    } else if (arr[mid] > searchelement) {
+        return BinarySearch(arr, searchelement, start, mid - 1); // Search left part
+    } else {
+        return BinarySearch(arr, searchelement, mid + 1, end); // Search right part
+    }
+}
+
+let arr = [-5, 0, 1, 3, 6, 7];
+let searchelement = 7;
+let index = BinarySearch(arr, searchelement);
+console.log("Index of", searchelement, "is", index);
+//output:Index of 7 is 5
+=> Time complexity : O(logN)
+
+* Subsequences:Group of numbers which demands only order, but not necessarily continuity.
+-> All subarray can be subsequence, but not all subsequence will be subarray.
+
+Example:
+function findSubsequences(arr) {
+  let result = [[]];
+  
+  for (let i = 0; i < arr.length; i++) {
+    let currentLength = result.length;
+    for (let j = 0; j < currentLength; j++) {
+      let subsequence = result[j].concat(arr[i]);
+      result.push(subsequence);
+    }
+  }
+  
+  return result;
+}
+
+let array = [2,3,9];
+console.log(findSubsequences(array));
+//output:[
+  [],       [ 2 ],
+  [ 3 ],    [ 2, 3 ],
+  [ 9 ],    [ 2, 9 ],
+  [ 3, 9 ], [ 2, 3, 9 ]
+]
+
+* Subset: Group of numbers which doesn't care for neither order nor continuity, checks only for presence of elements.
+Example: arr=[5,6,7,8,9,10]
+Subset= [6,7] [5,10] [5,7] etc.
