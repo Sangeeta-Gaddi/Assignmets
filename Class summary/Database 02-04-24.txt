@@ -1,0 +1,38 @@
+* Here introduction to Database is discussed.
+
+* Database:It is a structured collection of data that is organized and stored electonically.
+-> Database is a place which is used to store and manage large volume of information in a systematic way.It is a collection of related data.
+
+* Data Base Management System(DBMS):It is software that facilitates efficient way to store and retrive data.
+
+* Types of database:
+1) Relational database.
+2) Non-realational database.
+
+1) Relational database:Type of database that organizes data into tables with rows and columns.
+-> SQL(Structured Query Language) is used to interact with realational database.
+-> Stored in table format.
+-> It is collection of tables related to each other.
+
+2) Non-realational database:Type of database often reffered to as NoSQL database.
+-> It does not rely on the traditional tabular relationships.
+-> It uses data models like document,key-value,columnar,graph etc to store and manage data.
+
+* Properties of Relational Database:
+1) Represent data in realted tables.
+2) Every row is unique.
+3) All of the values or data storing in column should be of same datatype.
+4) Values or data in a cell should be atomic.
+5) No two columns or fields can have a same name... etc
+
+* Keys:A field or set of fields that can uniquely identify a row in a table.
+-> A key is also called as Super key.
+-> Types of keys:
+1) Candidate key:A key of minimum size that can uniquely identify a row.It is a subset of a super key.
+2) Primary key:One of the candidate key which is choosen by a database architect.
+3) Composite key:It is a key more than two fields that uniquely identify a record in a table.
+4) Foreign key:A field in a table that refers to primary key of another table.It establishes a relationship between two tables... etc
+
+
+
+

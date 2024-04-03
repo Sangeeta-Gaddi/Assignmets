@@ -1,0 +1,35 @@
+* Basic terminologies or terms related to databse:
+
+1) Relation:A relation refers to a two-dimensional table consisting of rows and columns.
+2) Attributes(field) of relation: It refers to columns of table.
+3) Tuple(record):It refers to row of a table.
+4) Degree of a relation:It refers to the number of columns or attributes in a table.
+5) Cardinality of a relation:It refers to the number of rows on a table.
+
+* Database Schema:It is also called as Schema design.
+-> It defines the structure and organization of database,it deals with a design of database.
+-> It serves as  blueprint for how the data is stored,accessed,and managed within the database system.
+-> Schema design is all about structuring databse.
+* It gives us below idea:
+-> What are the different tables required to store data.
+-> What are different attribute in each table.
+-> What is the relationship  between any two tables.  
+   and finally it gives a pictorial representation of database.
+
+* How to approach schema design.
+-> Go through the case study.
+-> Collect the requriements.
+
+* How to start modelling the schema.
+1) Find all the entities from the requriements.(entity:anything for which we are storing multiple details).
+-> Naming convention for tables:
+* Prefer to have plural names for table.
+2) There is need to establish the relationship between entities.
+3) How to represent different cardinalities in a database.
+-> 1:1 cardinality relationship-If we 1:1 cardinality relationship, then put the id of a table of your choice as goreign key.
+-> 1:M or M:1 cardinality relationship-If we this type of cardinality relationship, put the id of 1's side as the foreign key of M's side.
+-> M:M cardinality relationship:If we have this type of cardinality relationship, then we have to create new table to store the relationship.
+   (We call such new tables as Mapping table or Lookup table).
+
+
+
