@@ -1,0 +1,82 @@
+* Here SQL(Structured Query Language) and its Datatypes topic are discussed.
+
+* SQL(Structured Query Language):It is a standardized programming language used for managing and manipulating relational databases.
+-> It has set of commands.
+-> It has its own rules.
+
+* SQL Datatypes:
+-> SQL datatypes supports various datatypes to represent different types of data in a database.Some common SQL datatypes include:
+1)Strings
+2)Integers
+3)Floating points
+4)Boolean
+5)Date and Time
+6)Enums
+7)Blob
+
+1)String datatype:
+* CHAR(n):Fixed-length character string with a maximum length n characters.
+->n ranges from 0 to 225.
+->Genral examples-Pincode,Phone number,GST number etc
+Ex: pincode CHAR(50) 
+
+* VARCHAR(n):Variable-length character string with a maximum length n characters.
+->n ranges from 0 to 2^16-1.
+->examples-Name,Address,Email etc
+Ex: email_address VARCHAR(100) 
+
+* TEXT:Variable-length character string with a maximum length defined by the database  system(Usually larger than VARCHAR).
+->examples-paragraphs,documents etc
+Ex: bio TEXT
+* Additional text types:TINY TEXT(255B),TEXT(64KB),MEDIUM TEXT(16MB),LONG TEXT(4GB)..etc
+
+2) Integers datatypes:These datatypes are used to store whole number without any decimal places.
+* INT(Integer):It is a standard integer datatype capable of storing(4 bytes) of memory,values ranges from -2,147,483,648 to 2,147,483,647. 
+Ex: employee_id INT
+
+* SMALLINT:This defines a smaller integer datatype capable of storing (2 bytes) memory,values ranges from -32,768 to 32,767.
+Ex: age SMALLINT
+
+* BIGINT:This defines a larger integer datatype capable of storing (8 bytes) memory.
+Ex: population BIGINT
+
+* TINYINT:This defines a tiny integer datatype capable of storing(1 byte) memory,values ranges from -128 to 127.
+Ex: status_codes TINYINT
+
+3) Floating datatypes:These datatypes are used to store numbers with decimal points.
+* DECIMAL(p,s):Here approximate values cannot be stored.
+->It is used to store fixed-point numbers with exact precision and scale.
+->precision:The total number of digits in the number,both to left and right of decimal point.
+  scale:The number of digits to the rigth of the decimal point.
+Ex: salary DECIMAL(10,2)=specifies that decimal numbers with 10 digits,with 2 digits after the decimal point.
+
+* FLOAT:This datatype is capable of storing single-precision floating-point numbers.
+Ex: price FLOAT
+
+* DOUBLE:This datatype capable of storing double precision floating-point.
+Ex: temperature DOUBLE
+
+4) BOOLEAN:The boolean datatyep tepresent two truth values,TRUE and FALSE.
+Ex: is_active BOOLEAN
+
+5) DATE AND TIME:These datatypes re used to store temporal data such as date,times,or combination of both.
+* DATE:Stores date values in the format YYYY-MM-DD.
+Ex: 2024-04-05
+
+* TIME:Stores time values in the format HH:MM:SS.
+Ex: 14:30:00
+
+* DATETIME:Stores both date and time values in the format YYYY-MM-DD HH:MM:SS.
+Ex: '2024-04-05','14:30:00'
+
+6) Enums:ENUM is a data type that restricts a column's value to a predefined set of possible values. It's useful when you have a column that should only contain a specific set of options.
+Ex: payment_method ENUM()
+
+7)BLOBS:BLOB (Binary Large Object) is a data type used to store binary data, such as images, documents, audio, or video files. BLOBs can store large amounts of data, making them suitable for storing files or binary data that cannot be represented as plain text.
+* BLOB(65kB memory size).
+* TINYBLOB(235B memory size).
+* MEDIUMBLOB(16MB).
+* LONGBLOB(44B).
+Ex: image_data LONGBLOB
+
+
