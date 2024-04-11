@@ -1,0 +1,87 @@
+* Here we discussed the topic Normalization and its types.
+
+* Normalization:
+-> It is technique used to reduce redundancy of data in database.
+-> It helps us to create better database schema by avoiding redundancy.
+-> Improves Data Integrity.
+
+* Levels or Types of Normalization:
+-> 1 NF, 2 NF, 3 NF...etc
+
+1) 1 NF(First Normal Form):It says that,Every colunm or each table cell should contain a single or atomic value.
+-> Should not allow for multiple values in each table cell.
+* We can convert the table to 1NF table by following the below stepd:
+1) Remove the repeating goups.
+2) Create a separate table for each set of related data.
+3) Identify each set if realated data with a primary key.
+
+Example: Let us consider Student table:
+Stu-id  Stu-name  Phone-number
+  01     John     7898765643
+  02     Sam      9898765643, 7898765643
+  03     Marry    93345432312
+-> The above table is not in 1NF,because the Phone-number column contains multiple value for Stu-id (02),Stu-name (Sam).
+   Now the table can be transformed to 1NF by splitting student Sam into two different rows.
+
+Student table:
+Stu-id  Stu-name  Phone-number
+  01     John     7898765643
+  02     Sam      9898765643
+  02     Sam      7898765643
+  03     Marry    93345432312
+-> Each cell contains atomic values.
+ 
+2) 2 NF(Second Normal Form):It says that,Table should be in 1NF.
+-> Table should not have partial dependency on primary key.
+-> No non-primary attribute should depend on a part of primary key.
+
+Example: Let us consider the Employee table
+Emp-id   Dept-id  Office-location 
+ID2001   Eng01     Bangalore
+ID2003   Mech03    Delhi
+ID2004   Maths04   Pune
+-> Here, we have composite primary key(Emp-id,Dept-id) and non-primary attribute(Officelocation).
+-> The non-prime attribute (Officelocation) depends only on Dept-id(Which is only the part of primary key),Hence it is not in 2NF.
+   Now we can transform the table into 2NF,by splitting the table accordingly.
+
+Employee table:
+Emp-id   Dept-id  
+ID2001   Eng01     
+ID2003   Mech03   
+ID2004   Maths04  
+
+Department table:
+Dept-id  Office-location 
+Eng01     Bangalore
+Mech03    Delhi
+Maths04   Pune
+-> Now we removed the partial dependency because in Table2 we can see non-primary attribute(Officelocation) is fully dependent on the primary key(Dept-id).
+
+3) 3NF(Third Normal Form):It says that,Table should be in 2NF.
+-> There should be no transitive dependency for non-prime attributes.
+-> Every non-primary attribute should directly depend on primary key.
+
+Example:Let us consider the Student table
+Stu-id  Stu-name  Subj-id  Subject
+  01     Alex      15CS11   SQL
+  02     Bobby     15CS12   Java
+  03     Barry     15CS14   C++
+  04     Clair     15CS17   Python
+-> Here, Stud-id and Subj-id determines Subject, therefore Stud-id determines the Subject via Subj-id, This implies we have transitive functional dependency.
+-> Now there is need to convert the above table to 3NF, by dividing the table as shown below
+
+Student table:
+Stu-id  Stu-name  Subj-id  
+  01     Alex      15CS11   
+  02     Bobby     15CS12   
+  03     Barry     15CS14   
+  04     Clair     15CS17   
+-> Here Stud-name and Subj-id depends only on Stud-id.
+
+Subject table:
+Subj-id  Subject
+15CS11   SQL
+15CS12   Java
+15CS14   C++
+15CS17   Python
+-> Here Subject depends only on Subj-id.
