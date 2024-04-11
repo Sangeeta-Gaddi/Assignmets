@@ -1,0 +1,86 @@
+* Here we disussed the topic CRUD(Create,Read,Update,Delete).
+
+CRUD:These operations are fundamental to interacting with databases,as they allow you to manage and manipulate data effectively.
+
+-> Some of the operations are discussed below:
+1) To create database:
+   CREATE DATABASE database name;
+   Ex: CREATE DATABSE opqtech;
+
+2) To use database:
+   USE database name;
+   Ex: USE opqtech;
+
+3) To create tables:
+   CREATE TABLE student(
+    first_name VARCHAR(100),
+    last_name VARCHAR(100)
+   );
+   
+4) To insert values:
+   INSERT INTO table name(columns name)
+   VALUES (data for columns);
+   Ex: INSERT into student(id,first-name,last-name)
+       VALUES (1,"Arjun","Reddy");
+
+5) To alter table:
+   ALTER TABLE tablename
+   mention the constraints;
+   Ex: ALTER TABLE student
+       ADD PRIMARY KEY (id);
+
+6) If we want attributes and primary key to be not null,then specify it explicitly.
+    CREATE TABLE table name(
+       id INT PRIMARY KEY,
+       column name VARCHAR(100) NOT NULL,
+       column name VARCHAR(100) NOT NULL
+       );
+   Ex: CREATE TABLE student(
+       id INT PRIMARY KEY,
+       first_name VARCHAR(100) NOT NULL,
+       last_name VARCHAR(100) NOT NULL
+       );
+
+7) If we want database need to have default values when user does not give anything.
+   Ex:CREATE TABLE student(
+      id INT PRIMARY KEY,
+      first_name VARCHAR(100) NOT NULL,
+      last_name VARCHAR(100) NOT NULL DEFAULT "no entry"
+      );
+ 
+    INSERT INTO student(id,first_name)
+    VALUES (5,"Ramu");
+
+8) If we don't want to give the id by user,then we can give AUTO_INCREMENT command.
+ Ex:CREATE TABLE student(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL DEFAULT "no entry"
+    );
+
+   INSERT INTO student(first_name)
+   VALUES ("Srinidhi");
+
+*) If we want read the values from database:
+9) If we want to see all the column values.
+   SELECT * FROM table name;
+   Ex: SELECT * FROM student;
+
+10) If we want to read the particular column data,then mention that column name.
+   SELECT column name FROM table name;
+   Ex: SELECT first_name FROM student;
+
+11) To create nect table:
+    CREATE TABLE batches(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    batch_name VARCHAR(100)
+    );
+
+12) If we want to add the foreign key:
+    ALTER TABLE student 
+    ADD CONSTRAINTS fk_batch_id FOREIGN KEY (batch_id) REFERENCES batches(id);
+
+13) To drop the table:
+    DROP table name;
+    Ex: DROP TABLE session;
+    .........etc
