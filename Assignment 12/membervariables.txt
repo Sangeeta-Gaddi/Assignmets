@@ -1,0 +1,21 @@
+*) What are member variables.
+
+* Member variables:
+-> Member variables also known as class properties or fields.
+-> These are the variables that are associated with an instance of a class. 
+-> They represent the state of an object and hold data specific to that object. 
+-> Member variables are declared within the class, typically inside the constructor, and can be accessed and modified using the this keyword.
+
+Example:
+class Person{
+    constructor(name,age){
+        this.name=name; //member variable
+        this.age=age;  //member variable
+    }
+}
+
+let person1=new Person("Alice",30);
+
+//access member variables
+console.log(person1.name); //output:Alice
+console.log(person1.age); //output:30

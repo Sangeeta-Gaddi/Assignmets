@@ -1,0 +1,153 @@
+*) What is OOPS object oriented programming.
+
+* OOPS(Object Oriented Programming):
+->Object-oriented programming (OOP) is a programming paradigm that revolves around the concept of "objects," which can contain data (in the form of fields, also known as properties) and code (in the form of methods, also known as functions).
+
+* Here are the key concepts of Object-oriented programming:
+1)Classes and Objects:
+-> A class is a blueprint for creating objects. It defines the properties and methods that the objects created from it will have.
+-> An object is an instance of a class and can have its own unique properties and methods.
+Example:
+//create class called Person
+class Person{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;   
+    }
+    //define a method for class
+greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+}
+}
+//create object(instance) of the class Person
+let person1=new Person('Alice',20);
+
+//call the method() on object person1
+person1.greet();
+//output:Hello, my name is Alice and I am 20 years old.
+
+2) Encapsulation:(Data Binding)
+-> It is defined as the wrpping of data under a single unit.
+-> It is the mechanis that binds together code and the data.
+-> It is the process of binding the data(variables) with the functions acting on the data.
+Example:
+class Student{
+    constructor(name,marks){
+        this.name=name;
+        this.marks=marks;
+    }
+    //set values for class variable using set method
+    setName(name){
+        this.name=name;
+    }
+    //get or access the class variable
+    getName(){
+        return this.name;
+    }
+
+    setMarks(marks){
+        this.marks=marks;
+    }
+    getMarks(){
+        return this.marks;
+    }
+}
+//create instance(object)
+let stu1=new Student();
+stu1.setName("John");
+stu1.setMarks(70);
+
+//access data
+console.log(stu1.getName()+ " " + stu1.getMarks());
+
+//output:John 70
+
+3) Inheritance:
+-> Inheritance allows a class (subclass) to inherit properties and methods from another class (superclass).  
+-> We can define inheritance using the 'extends' keyword.
+Example:
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+//method how animals makes sound
+    animalsound() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+//define subclass
+class Dog extends Animal {
+    animalsound() { //overides the animalsound method of class Animal
+        console.log(`${this.name} barks.`);
+    }
+}
+
+let myDog = new Dog('Rover');
+myDog.animalsound();  
+// Output: Rover barks.
+
+4) Polymorpism:
+-> Ability to create a variable, or a function, or an object that has more than one form.
+-> It is a concept that allows objects of different classes to be treated as objects of a common superclass. This allows you to use a single interface to interact with different types of objects.
+Example:
+class Shape{
+    draw(){
+        console.log("I am generic shape");
+    }
+}
+class Square extends Shape{
+    draw(){
+        console.log("I am Square shape");
+    }
+}
+class Circel extends Shape
+{
+    draw(){
+        console.log("I am Circle shape");
+    }
+}
+
+let shape1=new Shape();
+shape1.draw();
+
+shape1=new Square();
+shape1.draw();
+
+shape1=new Circel();
+shape1.draw();
+/*output:I am generic shape
+         I am Square shape
+         I am Circle shape*/
+
+5) Abstraction:
+-> Abstractionis a concept that involves hiding the complex details of the system while exposing only the essential features needed for a specific purpose.
+-> Focuses on the essential properties and behaviors while hiding unnecessary details.
+
+Example:
+class Vehicle {
+    // Abstract method drive - it throws an error to ensure it is overridden in subclasses
+    drive() {
+        throw new Error("Method 'drive()' must be implemented.");
+    }
+}
+
+// Derived class Car extends Vehicle
+class Car extends Vehicle {
+    constructor(make, model) {
+        super(); // Call the base class constructor
+        this.make = make;
+        this.model = model;
+    }
+
+    // Overriding the drive method in Car class
+    drive() {
+        console.log(`Driving a ${this.make} ${this.model} car.`);
+    }
+}
+
+// Create an instance 
+const car = new Car("Toyota", "Corolla");
+car.drive(); 
+// Output: Driving a Toyota Corolla car.
+
+

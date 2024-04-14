@@ -1,0 +1,30 @@
+*) What is the difference between global scope and local scope in Javascript.
+
+* Global scope:Variables declared outside of any function or block are in the global scope.
+->It defines the context where variables declared can be accessed from any function or block within the code.
+->Global variables are accessible throughout the entire program, including inside functions and blocks.
+Example:
+let username="John"; //global variable
+
+function greetuser(){
+    console.log("Hello, " + username + " "); //access inside the function
+}
+greetuser();
+//output:Hello, John 
+
+console.log(username);//access outside the function
+//output:John 
+         
+* Local scope:A variable is in local scope if it is defined inside a function.
+->Local variables are only accessible within the function in which they are defined.
+->Variables in local scope have limited visibility and don't affect variables outside the scope. 
+Example:
+function greetuser(){
+    let username="John"; //local variable
+    console.log("Hello," + username + ""); //access inside function
+ }
+ greetuser();
+ //output:Hello,John
+
+ console.log(username); //cannot be accssed outside function
+ //output: username is not defined

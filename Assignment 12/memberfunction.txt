@@ -1,0 +1,24 @@
+*) What are Member Functions.
+
+* Member functions:
+-> Member functions are also known as methods.
+-> Are functions that are associated with a class. 
+-> These functions define the behavior of objects created from the class. 
+-> Member functions are declared within the class and can operate on the object's data (member variables).
+
+Example:
+class Person{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    //member function
+introduce(){
+    console.log(`Hi my name is ${this.name} and I am ${this.age} years old.`);
+}
+}
+
+//use member function
+let person1=new Person("Bob",25);
+person1.introduce();
+//output:Hi my name is Bob and I am 25 years old.

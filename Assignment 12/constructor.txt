@@ -1,0 +1,20 @@
+*) What is constructor.
+
+* Consstructor:
+-> Constructor is a special method within a class that is called when an instance of the class is created. 
+-> The constructor is used to initialize the object's properties (member variables) and perform any setup needed for the instance. It provides a way to set initial values for the object's state.
+
+Example:
+class Person{
+    constructor(name,age){ //constructor to initialize properties
+        this.name=name;
+        this.age=age;
+    }
+    
+introduce(){
+    console.log(`Hi my name is ${this.name} and I am ${this.age} years old.`);
+}
+}
+let person1=new Person("Bob",25);
+person1.introduce();
+//output:Hi my name is Bob and I am 25 years old.

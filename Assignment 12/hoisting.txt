@@ -1,0 +1,23 @@
+*) Explain the concept of Hoisting in Javascript. How dos it affect variable declarations.
+
+* Hoisting:It refers to the process of moving declarartions(both variables and functions) to the top of their scope before execution begins.
+->This means that variables and functions can be used before they are declared in the code.
+
+* Variable Hoisting:
+*)Variables declared with the var keyword are hoisted to the top of their scope (either the global scope or the function scope, depending on where they are declared).
+->When a var variable is hoisted, only its declaration (not its initialization) is moved to the top of the scope. This means the variable is created and initialized to undefined at the top of the scope, but the actual assignment remains in place.
+Example:
+console.log(x);
+var x=10;
+//output:undefined
+
+->The variable x is declared using var, so it is hoisted to the top of its scope and initialized to undefined.
+
+*)Variables declared with let or const are also hoisted, but are not initialized.They are in a "temporal dead zone" from the start of the block scope until the declaration is encountered in the code.
+-> Accessing a let or const variable before its declaration results in a ReferenceError.
+Example:
+console.log(y);
+let y=5;
+//output:ReferenceError: Cannot access 'y' before initialization
+
+->The variable y is declared using let, so it is also hoisted but remains in a temporal dead zone until its declaration line. Accessing it before the declaration results in a ReferenceError.
