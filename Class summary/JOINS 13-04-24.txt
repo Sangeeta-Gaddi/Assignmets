@@ -1,0 +1,46 @@
+* Here JOINS topic is discussed.
+
+* JOINS: Joins are used to combine rows from two or more tables based on related column between them.
+
+* The common types of joins are:
+1) INNER JOIN Or JOIN: Returns rows when there is a match in both tables.
+->An inner join returns rows from both tables where there is a match on the specified columns. If there is no match, the rows are not included in the result set.
+Syntax:
+SELECT table1.column1, table2.column2
+FROM table1
+INNER JOIN table2 
+ON table1.common_column = table2.common_column;
+
+2) LEFT JOIN:A left join returns all rows from the left (first) table and the matched rows from the right (second) table. 
+-> If there is no match, the result is NULL for the columns from the right table.
+Syntax:
+SELECT table1.column1, table2.column2
+FROM table1
+LEFT JOIN table2 
+ON table1.common_column = table2.common_column;
+
+3) RIGHT JOIN:A right join returns all rows from the right (second) table and the matched rows from the left (first) table. 
+-> If there is no match, the result is NULL for the columns from the left table.
+Syntax:
+SELECT table1.column1, table2.column2
+FROM table1
+RIGHT JOIN table2 
+ON table1.common_column = table2.common_column;
+
+4) SELF JOIN:A self join is when a table is joined with itself. 
+-> This is useful when you want to compare rows within the same table.
+Syntax:
+SELECT a.column1, b.column2
+FROM table1 t1
+JOIN table1 t2 
+ON t1.common_column = t2.common_column;
+
+5) MULTI TABLE JOIN:Joining multiple tables in SQL allows users to combine data from more than two tables based on related columns. 
+-> This allows you to retrieve data from multiple sources in a single query.
+-> To perform a multi-table join, you can chain together multiple JOIN clauses in your SQL query, using any type of join (e.g., INNER JOIN, LEFT JOIN, etc.) as needed.
+Syntax:
+SELECT columns
+FROM table1
+JOIN table2 ON table1.common_column = table2.common_column
+JOIN table3 ON table2.common_column2 = table3.common_column2
+WHERE condition;

@@ -1,0 +1,94 @@
+* Here we continued discussion on CRUD operations.
+
+* ALIAS and AS:
+-> ALIAS is used to give the alternative name to the column or table in the query.
+-> AS is the keyword is used to define the alias for a column or table.
+   SELECT column_name AS alias_name
+   FROM table_name;
+Ex: SELECT t.column_name
+    FROM table_name AS t; (Here 't' is an alias for 'table_name)
+
+* CONCAT() function:It is the function commonly used to concatenate two or more columns or strings into one column or one string.
+  SELECT CONCAT(column1,column2) AS concatenated_column
+  FROM table_name;
+Ex:SELECT CONCAT(first_name,last_name) AS full_name
+   FROM customers;
+
+* If we want to read the data from multiple columns, then we can read by mentioning the column names:
+  SELECT column1,column2,column3
+  FROM table name;
+Ex: SELECT points,first_name,last_name
+    FROM customers;
+
+* If we want to do changes for the columns data with numbers operations.
+  SELECT column name arithmetic operation 
+  FROM table name;
+Ex: SELECT points*2 
+    FROM customers;
+
+* If we want to read specific number of left characters from the given data.
+  SELECT LEFT(olumn_name,number of letters to be read from left side)
+  FROM table name;
+Ex: SELECT LEFT(first_name,3)
+    FROM customers;
+
+* WHERE:The WHERE clause in SQL is used to filter rows returned by a query based on specified conditions. It is an important part of many SQL queries because it allows you to retrieve only the rows that match certain criteria.
+-> The WHERE clause is powerful for filtering data and making your queries more specific and efficient.
+  SELECT column1, column2, ...
+  FROM table_name
+  WHERE condition;
+-> The condition can be any expression that evaluates to a boolean (TRUE or FALSE) and can include comparisons (e.g., =, <>, <, >, <=, >=), logical operators (AND, OR, NOT), and other functions or expressions.
+
+1) Filter rows based on a single condition:use the single condition after the WHERE clause.
+Ex: SELECT *
+    FROM employees
+    WHERE department = 'Sales';
+
+2) AND:Filter rows based on multiple conditions.
+SELECT *
+FROM table_name
+WHERE condition1 AND condition2;
+Ex: SELECT *
+    FROM employees
+    WHERE department = 'Sales' AND salary > 50000;
+
+3) LIKE:Filter rows using LIKE for pattern matching.
+SELECT *
+FROM table_name
+WHERE column_name  LIKE 'pattern';
+Ex:SELECT *
+   FROM customers
+   WHERE city LIKE 'c%';
+
+4) IN:Use IN to specify multiple values.
+Ex:SELECT *
+   FROM employees
+   WHERE department IN ('Sales', 'Marketing');
+
+* ORDER BY:The 'ORDER BY' clause is used to sort the rows returned by a query based on one or more columns.
+-> The ORDER BY clause is a useful way to control how the result set is displayed, making it easier to read and understand.
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [ASC|DESC], column2 [ASC|DESC], ...;
+Ex:SELECT *
+   FROM employees
+   ORDER BY department ASC, last_name DESC;
+
+* LIMIT:LIMIT clause is used to restrict the number of rows returned by a query. 
+-> It is commonly used when you want to retrieve a specific subset of records from a result set.
+    SELECT * 
+    FROM table_name
+    LIMIT number of rows;
+Ex: SELECT * 
+    FROM customers
+    LIMIT 5;
+
+* OFFSET:The OFFSET clause in SQL is used in combination with the LIMIT clause to specify the starting point from which rows should be retrieved in the result set.
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1
+LIMIT number_of_rows OFFSET offset;
+Ex:SELECT *
+   FROM employees
+   ORDER BY last_name
+   LIMIT 5 OFFSET 10;  

@@ -1,0 +1,82 @@
+* Here we discussed some examples on JOINS, topics like AGGREGATE functions and GRUOP BY clause are discussed.
+
+* Examples using JOINS:
+
+1) If we want firstname and orderdate.
+* USE databse name;
+* Write the query:
+  SELECT C.first_name, O.order_date
+  FROM customers C
+  JOIN orders O
+  ON C.customers_id=O.customers_id;
+
+2) Get the employee name and his manager or supervisior.
+* USE database name;
+* Query:
+   SELECT e1.first_name, e2.first_name AS manager
+   FROM employee e1
+   JOIN employee e2
+   ON e1.reports_to=e2.employee_id;
+
+3) Get the customer name,product name which he ordered and order date when he ordered.
+* USE database name;
+* Query:
+  SELECT C.first_name,P.name,O.order_date
+  FROM customers C
+  JOIN orders O
+  ON C.customers_id=O.customers_id
+  JOIN order_items OI
+  ON O.order_id=OI.order_id
+  JOIN product P
+  ON OI.product_id=P.product_id;
+
+* Agrregate Functions:These are the functions that perform a calculation on a set of values and return a single value. 
+-> These functions are useful when you want to summarize data or perform calculations across multiple rows of data.
+-> Some of the most commonly used aggregate functions in SQL include:
+   COUNT,SUM,AVG,MAX,MIN
+
+1) COUNT:Returns the number of rows in a result set. 
+-> You can use COUNT(*) to count all rows. 
+-> You can use COUNT(column) to count only the rows where the specified column is not NULL.
+Syntax:
+*SELECT COUNT(*) 
+ FROM table_name;
+
+*SELECT COUNT(column_name) 
+FROM table_name;
+
+2) SUM:Returns the sum of the values in a column. 
+-> This function works on numeric data types.
+Syntax:
+SELECT SUM(column_name) 
+FROM table_name;
+
+3) AVG:Returns the average (mean) of the values in a column. 
+-> This function works on numeric data types.
+Syntax:
+SELECT AVG(column_name) 
+FROM table_name;
+
+4) MAX:Returns the maximum value in a column.
+Syntax:
+SELECT MAX(column_name)
+FROM table_name;
+
+5) MIN:Returns the minimum value in a column.
+Syntax:
+SELECT MIN(column_name) 
+FROM table_name;
+
+* NOTE: In SELECT clause either have only column name or only aggregate functions, 
+        Mixing aggregate functions and column name is not allowed.
+
+* GROUP BY clause:
+-> The GROUP BY clause in SQL is used to group rows that have the same values in specified columns into aggregated data, such as sums, averages, or counts. 
+-> It is often used in conjunction with aggregate functions such as SUM(), AVG(), COUNT(), MAX(), and MIN() to perform calculations on groups of data.
+Syntax:
+SELECT column1, column2, aggregate_function(column3)
+FROM table_name
+GROUP BY column1, column2;
+
+* NOTE: If we have used the 'GROUP BY' clause then we can use both aggregate function with columns.
+
