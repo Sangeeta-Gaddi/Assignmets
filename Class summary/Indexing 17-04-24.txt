@@ -1,0 +1,65 @@
+* Here we discussed Indexing topic.
+
+Note:
+* Reading or Updating (I/O) operations will bring data from harddisk to RAM segment by segment (part by part).
+* Once the data is in RAM, it is analyzed by CPU and rows are selected or rows are rejected to prepare result.
+
+* Indexing in database:
+-> Indexing is a technique used to speed up the retrieval of data from tables. 
+-> An index is a data structure that is used to quickly locate and access the data in a table based on one or more columns. 
+-> Indexes can greatly improve the performance of queries that involve searching for records, filtering data, or performing join operations.
+
+* To create Index table:
+Syntax:
+CREATE INDEX index_name ON table_name (column1, column2);
+
+* To drop Index table:
+Syntax:
+DROP INDEX index_name ON table_name;
+
+* Indexing works as follows:
+  An index is created on a specific column or a combination of columns in a table. 
+  The index stores a sorted copy of the data values from the indexed column(s) along with pointers to the actual rows in the table. 
+  When a query is executed, the database engine can use the index to quickly locate the relevant rows.
+
+* Advantages and Disadvantages:
+*) Advantages:
+-> Improved query performance.
+-> Faster sorting and filtering.
+-> Fast search or Fast read is made(because of optimized reads).
+-> Reads only relevant segments.
+-> Decrease scanning of all segments or rows.
+
+*) Disadvantages:
+-> Increased storage(extra space per index).
+-> Insert,Delete,Update will becomes slow on particular row of a table(Slower write performance).
+
+* Guidelines:
+-> Do not create index while creating table.
+-> Analyze the traffic on databse and take relevant actions.
+
+* Indexing on Integers.
+  Indexing integers in a database is a common practice and can greatly improve the performance of queries that involve integer columns. 
+  Integer columns are often used as primary keys or foreign keys, as well as for storing other types of numeric data. Here's how indexing works for integers:
+  Syntax:
+  Creating an Index: 
+  CREATE INDEX idx_integer_column ON my_table (integer_column);
+
+  Dropping an Index: You can drop an index using the DROP INDEX statement:
+  DROP INDEX idx_integer_column ON my_table;
+
+* Integers on Strings:
+  Indexing on strings in a database is a common practice to improve the performance of queries that involve string columns (e.g., VARCHAR, CHAR, TEXT data types). 
+  Indexing string columns can speed up searches, filtering, and sorting based on those columns.
+->In some databases (such as MySQL), you can create a prefix index on a portion of a string column. This is useful when you only need to index the beginning of the string, reducing the index size and memory usage.
+  Synatx:
+  CREATE INDEX idx_prefix ON my_table (string_column(4));
+  In this example, the index idx_prefix is created on the first 4 characters of string_column.
+
+* Creating an Index on a string column using the:
+  Syntax:
+  CREATE INDEX idx_string_column ON my_table (string_column);
+
+* Dropping an Index using the DROP INDEX statement:
+  Synatx:
+  DROP INDEX idx_string_column ON my_table;

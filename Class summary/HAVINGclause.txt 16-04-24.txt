@@ -1,0 +1,86 @@
+* Here we discussed the topic HAVING clause:
+
+* HAVING clause:This clause is used to filter out the groups.
+-> The HAVING clause in MySQL is used to filter groups of data based on conditions. 
+-> It is typically used with the GROUP BY clause to group rows based on one or more columns and then apply conditions to the grouped data.
+-> The HAVING clause operates on grouped data and allows you to filter groups based on aggregate functions (e.g., COUNT, SUM, AVG, MIN, MAX). 
+Syntax:
+SELECT column1, column2, aggregate_function(column3) AS alias
+FROM table_name
+WHERE condition  //filter rows before grouping
+GROUP BY column1, column2
+HAVING aggregate_condition; //filter out the gropus
+
+* Difference between WHERE and HAVING clause.
+* WHERE clause:
+->Used before GROUP BY clause.
+->Helps to filter rows.
+->Cannot use aggregates in WHERE clause.
+
+* HAVING clause:
+->USED after GROUP BY clause.
+->Helps to filter groups.
+->Aggregates can be used to filter out groups.
+
+Examples discussed using HAVING clause:
+1) Give the batches and their average score for all batches with atleast three students
+   SELECT batch_id,AVG(score)
+   FROM students
+   GROUP BY batch_id
+   HAVING COUNT(id)>=3;
+
+2) Find the average score of all the batches having atleast three students who score above 80.
+   SELECT batch_id,Avg(score)
+   FROM students
+   WHERE score>=80;
+   GROUP BY batch_id
+   HAVING COUNT(id)>=3;
+
+3) Find average unit_price of all products.
+   SELECT AVG(unit_price)
+   FROM products;
+
+4) Find total number of quantity.
+   SELECT SUM(quantity_in_stock)
+   FROM products;
+
+5) Find the status for every order.
+   SELECT status, COUNT(order_id)
+   FROM orders
+   GROUP BY status;
+
+6) Find total invoice per client or customers.
+   SELECT COUNT(invoice_id)
+   FROM invoices
+   GROUP BY client_id;
+
+7) Find the total invoice of client for only those clients who had more than two invoices.
+   SELECT client_id,SUM(invoice_total)
+   FROM invoices
+   GROUP BY client_id
+   HAVING COUNT(invoice_id)>2;
+
+8) Find the total invoice per client
+   Consider only those invoices which have payment date
+   Find the total invoice of client for only those clients who had more than two invoices.
+   SELECT client_id,SUM(invoice_total)
+   FROM invoices
+   WHERE payment IS NOT NULL
+   GROUP BY client_id
+   HAVING COUNT(invoice_id)>2;
+
+9) Get customer_id, total number of items bought by each customer.
+   SELECT O.customer_id,COUNT(order_id)
+   FROM orders O
+   JOIN orders_items OI
+   ON O.orders_id=OI.order_id
+   GROUP BY O.customer_id;
+
+10) Get me the maximum orders ordered by customer.(consider above question)
+    SELECT O.customer_id,COUNT(order_id)
+    FROM orders O
+    JOIN orders_items OI
+    ON O.orders_id=OI.order_id
+    GROUP BY O.customer_id
+    ORDER BY COUNT DESC
+    LIMIT 1;
