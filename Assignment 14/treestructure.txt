@@ -1,0 +1,23 @@
+Q. What is the Tree data structure ? Why it is used.
+
+* Tree data structure:
+-> It is a data structure which is more opted to reprsent the hierarchical data.
+-> Trees are composed of nodes.Each node has a value and a list of references to its child nodes.
+-> Helps for efficient searching, sometimes insertion becomes easy.
+
+* Some of the attributes of trees:
+1) Root-It is the topmost node.from which all other nodes descend.
+2) Parent node-It is a node that has one or more child nodes.
+3) Child node-It is a node that is connected to a parent node.
+4) Leaf node-It is a node that has no children.
+5) Height of node-It is the longest path of node to any of its descendent leaf node
+6) Nodes: Each node in a tree contains a value (or data) and may also have a link to other nodes (children nodes).
+7) Edges: Edges are the links between nodes. They define the relationship and hierarchy between nodes
+   .......etc
+
+* Tree data structures are used for following reasons:
+1) Used for Hierarchical Data Representation.
+2) Provides Efficient Searching and Sorting.
+3) Insertion becomes easy using tree data structure.
+4) Helps in Navigation and Pathfinding.
+5) Used for Memory Management.....etc

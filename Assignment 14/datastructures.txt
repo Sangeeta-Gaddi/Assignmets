@@ -1,0 +1,28 @@
+Q. What are data structures.
+
+* Data Structures:
+-> Data structures are ways of organizing and storing data.
+-> It stores the data in a manner that allows efficient access and manipulation of data.
+
+* Some of the common data structures:
+1) Array: Array is a data structure  used to store lists of elements in a sequential order. 
+-> They can hold similar types of related data.
+
+2) Object: Object is a data structure which has a collections of key-value pairs. 
+-> They are commonly used to store and organize data, where the keys are strings and the values can be of any type.
+
+3) Set: Set is a data structure which has a collection of unique values.
+-> They do not allow duplicate values. 
+
+4) Linked List: Linked list is a data structure that consists of a series of nodes.
+-> Each node contains a value(data) and a reference (or link) to the next node in the list.
+
+5) Stack: Stack is a data structure which operates on the LIFO (Last In, First Out) principle. 
+-> Elements are added and removed from the same end of the stack.
+
+6) Queue: Queue is a data structure which operates the FIFO (First In, First Out) principle. 
+-> Elements are added to the end of the queue and removed from the front.
+
+7) Tree: Tree is a data structure which is more opted to reperesent hirerarchical data.
+-> Helps for efficient searching and insertion, deletion makes easy.
+.............etc
