@@ -1,0 +1,92 @@
+* Here Subqueries topic is discussed.
+
+* Subqueries:
+-> Subqueries are also known as inner queries or nested queries.
+-> Subquery is a query nested inside another query. They allow you to use the result of one query as a condition or value in another query.
+-> Subqueries can be used in SELECT, INSERT, UPDATE, or DELETE statements, and they are often used to filter or retrieve data based on specific criteria.
+Syntax: Syntax varies slightly,depends on where it is used.
+Generally it follows syntax:
+SELECT column1, column2, ...
+FROM table1
+WHERE column1 operators (SELECT column_name FROM table2 WHERE condition);
+
+Examples:
+1) Find all the students having higher score than student with id=5.
+-> Using JOINS:
+SELECT *
+FROM students s1
+JOIN students s2
+ON s1.score>s2.score
+WHERE s2.id=5;
+
+-> Using Subquery:
+ SELECT *
+ FROM students 
+ WHERE score > (
+    SELECT score
+    FROM students
+    WHERE id=5
+ );
+
+* NOTE/RULES for writing subquery:
+1) Inner Query with One Value:(if inner query returns one value/single value),then use the following comparision operators to compare the that value with other values or columns in the outer query.
+-> "=", "!=", ">", "<", ">=", "<="
+
+2) Inner Query with Multiple Values:(if inner query returns multiple values),then use the following operators to compare those values with other values or columns in the outer query. 
+-> "IN", "NOT IN", "ANY", "ALL", "EXISTS", ">ALL", ">=ALL", "<ALL", "<=ALL"
+
+2) Find the products which are not ordered by customers.
+   SELECT id,name
+   FROM products
+   WHERE id NOT IN (
+    SELECT p_id
+    FROM products
+   );
+
+3) Find all students who has their score greater than all students of b-id=3.
+   SELECT * 
+   FROM students
+   WHERE score > (
+    SELECT MAX(score)
+    FROM students
+    WHERE b_id=3
+   );
+
+4) Find the students with score greater than any student of b_id=3.
+   SELECT *
+   FROM students
+   WHERE b_id!=3 AND score > ANY(
+    SELECT score 
+    FROM students 
+    WHERE b_id=3
+   );
+
+
+
+
+*  Corelated Subqueries:
+-> Correlated subqueries are subqueries where the inner query depends on the outer query. 
+-> That is, the inner query references columns from the outer query, creating a relationship between the two.
+
+Example:
+1) Find all students who have score greater than the average score of their own batch.
+     SELECT *
+     FROM students s1
+     WHERE s1.score > (
+        SELECT AVG(score) 
+        FROM students
+        WHERE b_id = s1.b_id
+    );
+
+* NOTE: When to go for JOINS and when TO go for SUBQUERY:
+-> Practically JOINS are faster if data is large and has multiple tables, SUBQUERY is slower for large data, so go for  JOINS in this case.
+-> Practically SUBQUERY is faster for less data, so go for subqueries when data is less.
+
+* Subquery in SELECT clause:
+-> Subqueries in the SELECT clause are used to retrieve additional information based on each row of the main query's result set.
+
+Example:
+1) Add the AvgScore column for students table.
+   SELECT s1.*, 
+    (SELECT AVG(score) FROM students s2 WHERE s2.bi_d=s1.b_id) AS AvgScore
+   FROM students s1;
