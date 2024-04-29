@@ -1,0 +1,38 @@
+* Here Linux basic commands are discussed.
+
+1) pwd -> gives us the current working directory.
+
+2) cd -> changes the current directory.
+
+3) ./ -> gives us current directory.
+
+4) ../ -> will takes us to previous directory.
+
+5) ls -> lists the contents of the directory.
+
+6) ls -l -> gives us the detailed information about each file and directory.
+
+7) ls -lt -> sort the files and directories based on time.
+
+8) ls -ltr -> used to reverse the list of files.
+
+9) ls -lh -> gives us the files size in human readable form.
+
+10)ls -la -> used to see the hidden files.
+
+11)man "commandname" -> gives the detailed information how to use a particular command.
+-> 'q' : used to exit from the man command.
+
+12)mkdir "directory name" -> used to create new directory.
+
+13)mkdir "multiple directories names" -> used to create multiple directories.
+
+14)mkdir -p "dir1/dir2/dir3" -> used to create nested directories.
+
+15)touch "filename" -> used to create new file.
+
+16)rm "filename" -> remove the particular file.
+
+17)rm "directoryname" -> remove the directory.
+
+18)rm -rf "directoryname" -> forcefully removes/deletes the directory(even though it is not empty).
