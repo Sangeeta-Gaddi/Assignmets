@@ -1,0 +1,54 @@
+* Here Linux commands are discussed:
+
+1) cd ~/ (tilde command) : this command will takes us to home directory.
+
+2) cp filename filename2 : used to copy the files, here filename is copied as filename2.
+
+3) cp -R directory1 directory2 : used to copy the directories.
+
+4) cat filename : used to see or print the content of the required file.
+
+5) cat -n filename : used to see or print the content of file along with line number.
+
+6) mv filename filename2 : used to rename the file . filenamne is renamed as filename2 
+
+7) mv filename directory : used to move file from one directory to other directory.
+
+8) echo "data/message" : used to print the data.
+-> echo "environment variables" : used to print environment variables data/information.
+
+9) echo "data" > filename : used to push the content to required file.
+
+10)echo "data" >> filename : used to append the data to the file.
+
+11)echo -e "data \n data" : used to append data at new line.
+
+Note: We can execute multiple commands in one shot using semicolon(;).
+Ex: cat user;pwd;ls;echo "This is sangeeta"
+
+12)export "environment variable name"(your choice) : used to create environment variables.
+-> export duplicate=1.1.1.1 
+
+13)export "environment variable name"='value" : used to set the environment variable for all terminals.
+->export mysql=10.12.212.23
+
+14)unset "environment variable name" : used to unset or delete the environment variable.
+
+15)wc filename : used to get the wordcount of the file, it will print number of lines,number of words,number of charcters,file name etc.
+
+16)wc -l filename : used to print only number of lines in the file.
+
+17)wc -w filename : used to print only number of words in the file.
+
+18)wc -c filename : used to print only number of charcters.
+
+19)vi filename : used to open the created or existing file, to modify the data in the file.
+-> Press 'I' button  to enter into insert mode.
+-> Press 'Esc' button to come out of the insert mode. 
+-> Esc + :w -----used to save the file. 
+-> Esc + :wq -----used to  save and quit.
+-> Esc + :q -----used to quit. 
+-> Esc + :wq! ------used to quit without saving.
+
+20)touch filename : used to create dummy files(with no content).
+

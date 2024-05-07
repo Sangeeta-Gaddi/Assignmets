@@ -1,0 +1,46 @@
+* Linux commands are discussed here:
+
+1) tail filename : it will prints last 10 lines of the file content.
+
+2) tail -5 filename : prints the specified number of lines content of the file from last.
+
+3) tail -f filename : continuously monitors the file content.
+
+4) less filename : provides the file content or data which fits the screen.
+-> press "space" to get see content of the next page.
+-> press "q" to come out of less command.
+
+5) less -10 filename : to fits number of specified lines content on the screen.
+
+6) head filename : will prints the first few lines content of the specified file.
+
+7) head -5 filename : will prints first 5 lines of the specified file.
+
+8) du filename : will print the filesize.
+
+9) du -sh filename : provides file size in human readable form.
+
+10)du -sb filename : provides file size or file data in bytes form.
+
+11)df -lh : provides the entire file system size.
+
+12)chmod 777 filename : changes the file permissions.
+
+-> other way to change the file permission:
+13)chmod u+rwx(read,write,execute) filename : changes file permissions of the user.
+
+14)chmod g+rwx filename : changes file permissions of the group.
+
+15)chmod o+rwx filename : changes file permissions of the others.
+
+16)chmod u-w filename : used to remove the write permission of the user.
+
+17)who : provides total number of users logged into the machine.
+
+18)whoami : shows us the current user name.
+-> use "exit" to come out of whoami.
+
+19)id : used to see the complete details of the current user.
+
+20)id "username" : provides the complete information about the particular mentioned user.
+

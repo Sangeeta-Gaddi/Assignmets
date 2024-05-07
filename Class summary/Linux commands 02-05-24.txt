@@ -1,0 +1,57 @@
+* Linux commands are discussed here:
+
+1)useradd username : used to create new user. 
+
+2)passwd password : used to set the password
+
+3)passwd -S username : used to check the status of the user account. 
+
+4)su username : used to switch the user.
+
+5)passwd -l username : used to lock the account of the user.
+
+6)passwd -u username : used to unlock the account of the user.
+
+7)useradd -c "comment" username : used to add the comment for user.
+
+8)useradd -g  "groupname" : used to add user to particular group.
+
+9)userdel -r username : used to delete the user.
+   
+10)groupadd groupname : used to create the group. 
+
+11)groupdel groupname : used to delete the group. 
+
+12)hostname -i : provides the ip address.
+
+13)ifconfig : provides the ip address.
+
+14)hostname "newname" : used to change the hostname.
+
+15)find ./ -name "filename" : used to find files and directories with the given name.
+
+16)find ./ -iname "filename" : make the case insensitive and finds the  files and directories with the given name.  
+
+17)find ./ -type f -name "filename" : used to search only files.
+
+18)find ./ -type d -name  "directoryname" : used to search only directories.
+
+19)touch filename.pdf : used to create pdf files. 
+
+20)grep "keyword/pattern" filename : used to find files content with the given keyword.
+  
+21)grep -w "keyword" filename : used when we want the exact pattern.
+
+22)grep -iw "keyword" filename : make the search case insensitive.
+
+23)grep -inw "keyword" filename : to add line numbers.
+
+24)grep -inwr "keyword' filename : to serach in entire directory.
+       
+25)pipe(|) : used to execute multiple commands by concatinating. 
+ 
+26) file filename : used to find file type.
+       
+
+  
+                        
