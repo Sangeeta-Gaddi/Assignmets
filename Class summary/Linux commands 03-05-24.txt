@@ -1,0 +1,65 @@
+* Here Linux commands are discussed.
+
+1)ps -ef : gives us all the processes in detailed format running on Linux machine.
+
+2)ps -ef | grep "process name" : gives us the particular process.
+
+3)kill "processID" : to kill particular process.
+
+4)kill -9 "processID" : to kill or terminate the process forcefully.
+
+5)root user process : used to list the root user processes.
+
+6)kill processid1 processid2 processid3 :used to kill the multiple processes by ProcessID.
+
+7)tar -cvf compression .tar * : used to compress all files.
+
+8)tar -xvf compression.tar : used to extract files from a Tar Archive.
+
+9) tar -cvzf compression.gz* : used to create a gzipped tar archive named compression.gz from all files matching the pattern compression.gz* in the current directory.
+
+10)tar -xvzf compression.gz  : used to extract the contents of the compression.gz gzip compressed tar archive in the current directory.
+
+11)tar -xvzf compression.gz -C directoryname : used to extracts the contents of the compression.gz archive into the specified directory. 
+
+12)tar tf compression.tar : used to see the contents of zip file.
+
+13)tar tf compression.gz : used to see the content of zipped files.
+
+14)tar tf comp.gz info.txt  : used to see the specified single file present in the compressed file or not.
+
+15)zip comp.zip * : used to compress all files or zip all the files.
+
+16)unzip comp.zip : used to unzip or extract the content.
+
+17)unzip comp.zip -d uncomzip : used to extract or unzip the zippedfiles to a particular mentioned directory.
+
+18)wget "url" : used for downloading files from the internet.
+
+19)wget -b "url" : used to download the files in the background because of their large size.
+
+20)wget -i urls.txt : used to download data from multiple urls specifying the particular file or directory which has multiple urls.
+
+21)wget -O newfilename "url" : used to download the files with new filename.
+
+22)curl https://google.com : used to see the content of the particular url, don't want to download the content of the url.
+
+23)curl -O google.com https://opqbootcamp.com : used to download the content of the mentioned url.
+
+24)curl -O dummy.pdf "url" : used to download the specified PDF file using curl and saves it with the same name as in the URL.
+
+25)ping google.com : used to send ICMP request message to the specified host to check if it has internet connectivity or not.
+
+26)ping 10.12.212.12 : used to send ICMP request message to the specified IP address to check its connectivity.
+
+27)ping -c 5 google.com : used to restrict the packets count(responses).
+
+28)ssh -i Linux-class.pem ec2-user@13.201.9.59 : This command establishes an SSH connection to the host 13.201.9.59 with the username ec2-user, using the private key file Linux-class.pem.
+
+29)uniq filename : used to print the unique lines or values from the particular mentioned file.
+
+30)sort filename : used to  sorts the content of the mentioned file.
+
+31)sort -r filename : used to do reverse sorting.
+
+32)reboot : used to reboot the machine or to restart the system.
