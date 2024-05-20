@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>FEEDBACK FORM</title>
+        <style>
+            body{
+                background-image: url(./image.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container{
+                background-color: bisque;
+                padding: 20px;
+                border-radius: 10px;
+                width: 500px;
+            }
+
+            h1{
+                margin-top: 0px;
+                font-size: 20px;
+                text-align: center;
+                color: chocolate;
+                font-weight: bold;
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+            }
+
+            label{
+                margin-top: 15px;
+                font-weight: bold;
+                color: brown;
+            }
+
+            input, select, textarea{
+               margin-top: 5px;
+               padding: 10px;
+               border: 2px solid black;
+               border-radius: 5px;
+               width: 100%;
+               font-size: 15px;
+            }
+
+            button{
+                margin-top: 20px;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                background-color: lightblue;
+                color: darkred;
+                font-size: 20px;
+            }
+
+            button:hover{
+                background-color: rgb(13, 154, 236);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Feedback Form</h1>
+            <form>
+                <label>Name</label>
+                <input type="text">
+                <label>Email</label>
+                <input type="email">
+                <label>Phone Number</label>
+                <input type="number">
+
+            <label>Rating</label>
+            <select>
+            <option value="4">Excellent</option>
+            <option value="3">Good</option>
+            <option value="2">Average</option>
+            <option value="1">Poor</option>
+        </select>
+
+        <label>Comments</label>
+        <textarea id="feedback" name="feedback" rows="4" cols="10"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </body>
+</html>
